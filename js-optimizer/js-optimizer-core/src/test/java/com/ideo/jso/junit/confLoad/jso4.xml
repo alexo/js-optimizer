@@ -1,0 +1,10 @@
+<!--  TEST BASIC FUNCTIONALITY OF JSO CONFIGURATION LOADING -->
+<jso>
+	<default key="location" value="default_location"/>
+	<default key="timeStampPolicy" value="all"/>
+	<default key="timeStampPolicy" value="no"/>
+	<default key="timeStampPolicy" value="local"/>
+	<default key="timeStampPolicy" value="wrong"/>
+	
+
+</jso>

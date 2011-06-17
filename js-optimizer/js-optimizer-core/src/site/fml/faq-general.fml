@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<faqs title="General Frequently Asked Questions about JavaScript Optimizer - JSO">
+   <part id="faq">
+
+        <faq id="start">
+                <question>How to start developing with JavaScript Optimizer - JSO?</question>
+                <answer>
+                        The mandatories information to start a project with JavaScript Optimizer - JSO are given in the <a href="getting_started.html">Getting Started</a> section.<br/>
+						To learn about the way to configure JavaScript Optimizer - JSO, have a look to the <a href="descriptor.html">Descriptor</a> section.
+                </answer>
+        </faq>
+        <faq id="start">
+                <question>How to set the debug mode ?</question>
+                <answer>
+                        JavaScript Optimizer - JSO provides a really simple way to debug your resources.<br/>
+                        If you have a production JSP and that you want to debug your resources imported easily, just copy the following line in your browser url field:<br/>
+                        <code><source>
+	javascript:alert(document.cookie="jso.exploded=true")
+</source></code>
+Don't worry, your page won't get erase, a simple popup will appear validating the operation. Now the debug mode is set. To cancel it, execute the same process, setting the value of the exploded mode to false :
+<code><source>
+	javascript:alert(document.cookie="jso.exploded=false")
+</source></code>
+                </answer>
+        </faq>
+        <faq id="start">
+                <question>How to build a group out of a web context ?</question>
+                <answer>
+                        JavaScript Optimizer - JSO provide a class permitting to run the build outside of a web context, by a class containing a main() method.<br/>
+                        Run the Java class <b>com.ideo.jso.main.JSOMain</b>, giving it in argument a list of group to minimize, comma separated, and a resulting file name.<br/>
+                        The resulting JavaScript file (not CSS yet) will be built in the file specified.
+                </answer>
+        </faq>
+   </part>
+</faqs>

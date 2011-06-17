@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document>
+	<properties>
+		<author>Ideo Technologies</author>
+		<title>JavaScript Optimizer Performances</title>
+	</properties>
+	<head>
+		<meta name="keyword" content="JavaScript Optimizer - JSO - Getting Started - Compress, Optimize JS Files, CSS, IE cache" />
+	</head>
+	<body>
+    	<section name="Performances Matrix">
+    		Here is the performances that we obtain by setting the different modes of <strong>JavaScript Optimizer - JSO</strong> in a basic JSP (demo values computed on Firefox 2.0):<br/><br/> 
+			
+			<h2>Exploded mode: classic loading mode.</h2>
+			<table border="1" bordercolor="gray" width="100%">
+	<tr>
+		<th>Resource Name</th>
+		<th>Response length (byte)</th>
+
+		<th>Request time (ms)</th>
+	</tr>
+	<tr><td>util.js</td><td>1369</td><td>78</td></tr><tr><td>demojs2common.js</td><td>234</td><td>94</td></tr><tr><td>demojs1common.js</td><td>238</td><td>110</td></tr><tr><td>AjaxPooler.js</td><td>2135</td><td>188</td></tr><tr><td>Ajax.js</td><td>6964</td><td>188</td></tr><tr><td>RIATimer.js</td><td>1792</td><td>203</td></tr><tr><td>demojs2.js</td><td>215</td><td>281</td></tr><tr><td>demojs1.js</td><td>215</td><td>282</td></tr>
+</table><br/>
+
+<h2>Complete mode: resources are concatenated.</h2>
+<table border="1" bordercolor="gray" width="100%">
+	<tr>
+
+		<th>Resource Name</th>
+		<th>Response length (byte)</th>
+		<th>Request time (ms)</th>
+	</tr>
+	<tr><td>demo-full-complete.js</td><td>13170</td><td>300</td></tr>
+</table><br/>
+<h2>Minimized mode: resources are concatenated and minimized.</h2>
+<table border="1" bordercolor="gray" width="100%">
+	<tr>
+		<th>Resource Name</th>
+		<th>Response length (byte)</th>
+		<th>Request time (ms)</th>
+	</tr>
+	<tr><td>demo-full-min.js</td><td>6449</td><td>250</td></tr>
+</table>
+
+	    </section>
+	</body>
+</document>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document>
+	<properties>
+		<author>Ideo Technologies</author>
+		<title>JSO demo</title>
+	</properties>
+	<head>
+		<meta name="keyword" content="JavaScript Optimizer - JSO - Demo - Compress, Optimize JS Files, CSS, IE cache" />
+	</head>
+	<body>
+	    <section name="JavaScript Optimizer Demo">
+		    An overview of the performances gained after concatenation and minimization is the main purpose of this demo, that can be tested following <a href="http://js-optimizer.ideotechnologies.com/js-optimizer-demo/">this link</a>.<br/>
+		    An other way to try the demo is to <a href="http://sourceforge.net/project/showfiles.php?group_id=208046&amp;package_id=249418" title="download JavaScript Optimizer - JSO demo package">download</a> it from sourceforge.<br/>
+	    </section>
+	</body>
+</document>

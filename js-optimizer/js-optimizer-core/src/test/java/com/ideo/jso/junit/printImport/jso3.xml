@@ -1,0 +1,32 @@
+<!--  TEST BASIC FUNCTIONALITY OF JSO CONFIGURATION LOADING -->
+<jso>
+	<group name="group1" minimize="false" timeStampPolicy="no">
+		<!--  no sub groups  -->
+		<js>/resources/js/group1/js1.js</js>
+		<js>/resources/js/group1/js2.js</js>
+		<css>/resources/css/group1/css1.css</css>
+		<css>/resources/css/group1/css2.css</css>
+	</group>
+
+	<group name="group2" minimize="false">
+		<js>/resources/js/group2/js1.js</js>
+		<css>/resources/css/group2/css1.css</css>	</group>
+   
+   	<group name="group3" minimize="false" location="http://mocksite/">
+		<js>/resources/js/group3/js1.js</js>
+		<group-ref>group2</group-ref>
+		<js>/resources/js/group3/js2.js</js>
+		<group-ref>group1</group-ref>
+		<css>/resources/css/group3/css1.css</css>
+		<css>/resources/css/group3/css2.css</css>
+	</group>
+	
+   	<group name="group4" minimize="false" location="http://mocksite/" timeStampPolicy="all">
+		<js>/resources/js/group3/js1.js</js>
+		<group-ref>group2</group-ref>
+		<js>/resources/js/group3/js2.js</js>
+		<group-ref>group1</group-ref>
+		<css>/resources/css/group3/css1.css</css>
+		<css>/resources/css/group3/css2.css</css>
+	</group>
+</jso>

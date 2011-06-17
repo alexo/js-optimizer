@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document>
+	<properties>
+		<author>Ideo Technologies</author>
+		<title>JavaScript Optimizer Getting Started</title>
+	</properties>
+	<head>
+		<meta name="keyword" content="JavaScript Optimizer - JSO - Getting Started - Compress, Optimize JS Files, CSS, IE cache" />
+	</head>
+	<body>
+    	<section name="Getting Started with JavaScript Optimizer">
+    	Follow this steps to install JavaScript Optimizer in your application:<br/>
+    		<h2>Installation</h2>
+			<ul>
+				<li>Download <strong>JavaScript Optimizer - JSO</strong> from sourceforge following the <a href="downloads.html">Download</a> section.<br/>
+                                The required archive is the last version of js-optimizer-core-X.X.jar.<br/>
+                                The jar's dependencies can be gathered either by the pom file contained in the jar or simply download the blank application in the section download and copy the content of the lib folder.
+                                </li>
+        			<li>Place the core jar and the dependencies of JavaScript Optimizer in your webapp lib directory.</li>
+        			<li>Your project tree structure should now be :<br/>
+        			+ROOT           <br/>
+                                --+WEB-INF            <br/>
+        			----+lib              <br/>
+        			------js-optimizer-core-XXX.jar     <br/>
+        			------%dependencies%.jar        <br/>
+                                </li>
+           		</ul>
+    		<h2>Configuration</h2>
+              Now that JavaScript Optimizer is installed, follow this steps to use it in your application :<br/>
+			<ul>
+           			<li>Add these lines to your web.xml : <br/>
+                                <code>
+    &lt;filter&gt;
+        &lt;filter-name&gt;BrowserCacheFilter&lt;/filter-name&gt;
+        &lt;filter-class&gt;com.ideo.jso.filter.BrowserCacheFilter&lt;/filter-class&gt;
+    &lt;/filter&gt;
+    <br/>
+    &lt;filter-mapping&gt;
+        &lt;filter-name&gt;BrowserCacheFilter&lt;/filter-name&gt;
+        &lt;url-pattern&gt;*.js&lt;/url-pattern&gt;
+    &lt;/filter-mapping&gt;
+    &lt;filter-mapping&gt;
+        &lt;filter-name&gt;BrowserCacheFilter&lt;/filter-name&gt;
+        &lt;url-pattern&gt;*.css&lt;/url-pattern&gt;
+    &lt;/filter-mapping&gt;
+    &lt;filter-mapping&gt;
+        &lt;filter-name&gt;BrowserCacheFilter&lt;/filter-name&gt;
+        &lt;url-pattern&gt;*.jpg&lt;/url-pattern&gt;
+    &lt;/filter-mapping&gt;
+    &lt;filter-mapping&gt;
+        &lt;filter-name&gt;BrowserCacheFilter&lt;/filter-name&gt;
+        &lt;url-pattern&gt;*.gif&lt;/url-pattern&gt;
+    &lt;/filter-mapping&gt;
+    &lt;filter-mapping&gt;
+        &lt;filter-name&gt;BrowserCacheFilter&lt;/filter-name&gt;
+        &lt;url-pattern&gt;*.png&lt;/url-pattern&gt;
+    &lt;/filter-mapping&gt;
+    <br/>
+   	&lt;servlet&gt;
+        &lt;servlet-name&gt;jso&lt;/servlet-name&gt;
+        &lt;servlet-class&gt;com.ideo.jso.servlet.JsoServlet&lt;/servlet-class&gt;
+        &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+    &lt;/servlet&gt;
+    &lt;servlet-mapping&gt;
+		&lt;servlet-name&gt;jso&lt;/servlet-name&gt;
+		&lt;url-pattern&gt;/jso/*&lt;/url-pattern&gt;
+    &lt;/servlet-mapping&gt;
+               			</code>
+                                   </li>
+           			<li>Create a jso.xml configuration file defining the groups of resources to import. (see the <a href="descriptor.html">XML descriptor</a> section to have more information about this file).
+                                </li>
+           			<li>Add a &lt;jso:include&gt; tag in the head of your JSP to include the needed groups defined in the previous xml file.
+                                </li>
+           		</ul>
+    		<h2>That's it!</h2>
+    		   Your resources have been imported and cached in your web client !
+
+	    </section>
+	</body>
+</document>

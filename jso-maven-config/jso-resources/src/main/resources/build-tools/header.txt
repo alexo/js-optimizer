@@ -1,0 +1,9 @@
+/* ------------------------------------
+ * SweetDEV III
+ * Copyright Ideo Technologies - 2010
+ * Document strictement confidentiel
+ * Tous droits de propriete reserves
+ * @version 2.2
+ * @author Ideo Technologies
+ * ------------------------------------
+ */

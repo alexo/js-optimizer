@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document>
+	<properties>
+		<author>Ideo Technologies</author>
+		<title>JSO - Compress, Optimize JS Files, CSS, IE cache</title>
+	</properties>
+	<head>
+		<meta name="keyword" content="JavaScript Optimizer - Descriptor - JSO - Compress, Optimize JS Files, CSS, IE cache" />
+	</head>
+	<body>
+    	<section name="jso.xml Descriptor file">
+    	This section is about the XML descriptor file configuring <strong>JavaScript Optimizer - JSO</strong>.
+		
+		<h2>Tags description</h2>
+		This descriptor file is really easy to configure.<br/><br/>
+		
+		Here is a simple overview of all the possibilities provided by this xml file:<br/>
+		<code>
+&lt;jso&gt;
+	&lt;group name="group1" location="http://localhost:8085/"&gt;
+		&lt;js&gt;/jsfile.js&lt;/js&gt;
+		&lt;js&gt;/jsfile2.js&lt;/js&gt;
+	&lt;/group&gt;
+	
+	&lt;group name="group2"&gt;
+		&lt;js&gt;/jsfile3.js&lt;/js&gt;
+		&lt;js&gt;/jsfile4.js&lt;/js&gt;
+		&lt;css&gt;/cssfile1.css&lt;/css&gt;
+		&lt;group-ref&gt;group1&lt;/group-ref&gt;
+	&lt;/group&gt;
+	
+	&lt;group name="all-min" retention="true"&gt;
+		&lt;group-ref&gt;group2&lt;/group-ref&gt;
+	&lt;/group&gt;
+	&lt;group name="all-complete" minimize="false"&gt;
+		&lt;group-ref&gt;group2&lt;/group-ref&gt;
+	&lt;/group&gt;
+&lt;/jso&gt;
+		</code>
+		As you can see, a group is identified by a name and contains resources (that can be either js files, css files, or references to other groups).<br/>
+		These resources can be located at any place. The inheritable <b>location</b> attribute allow you to customize the resources location. In this example, the resources of "group1" are provided by an different server.<br/>
+		Note that if the group is set as minimized, and in a remote server, you will have to compress manually (JSOMain class) and set that compressed file at the remote location. The path for that file must be "LOCATION/jso/GROUP_NAME.js".
+		<br/>
+		A group is minimized by default, but this feature can be disabled by setting the <b>minimize</b> attribute to false : the files won't be modified (just concatenated if <b>exploded</b> mode is set to false in the tag). Furthermore, this <b>minimized</b> attribute is recursive, it will be applied to all its nested resources. This can be really useful to set different configurations modes.<br/><br/>
+		In the previous example, we can see that two identicals modes have been defined, except that one minimizes the resources and write the resulting file into the disk. A single modification of the group specified in the tag permit to switch from a commented bufferized JavaScript to a minimized written one. 
+	    </section>
+	</body>
+</document>

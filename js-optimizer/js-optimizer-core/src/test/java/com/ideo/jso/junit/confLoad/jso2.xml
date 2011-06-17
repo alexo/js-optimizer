@@ -1,0 +1,27 @@
+<!--  TEST BASIC FUNCTIONALITY OF JSO CONFIGURATION LOADING -->
+
+
+
+<jso>
+
+	<group name="group1" >
+		<!--  no sub groups  -->
+		<js>GROUP1_FILEJS1</js>
+		<js>GROUP1_FILEJS2</js>
+		<css>GROUP1_FILECSS1</css>
+		<css>GROUP1_FILECSS2</css>
+	</group>
+
+	<group name="group2" location="location_of_group2">
+		<!--  no resources -->
+	</group>
+   
+   	<group name="group3" location="location_of_group3">
+		<js>GROUP3_FILEJS1</js>
+		<group-ref>group2</group-ref>
+		<js>GROUP3_FILEJS2</js>
+		<group-ref>group1</group-ref>
+		<css>GROUP3_FILECSS1</css>
+		<css>GROUP3_FILECSS2</css>
+	</group>
+</jso>

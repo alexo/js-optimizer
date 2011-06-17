@@ -1,0 +1,16 @@
+<!--  TEST BASIC FUNCTIONALITY OF JSO CONFIGURATION LOADING -->
+
+<jso>
+
+	<group name="group1" location="location1_of_group1"  conflictRule="append">
+		<js>GROUP1_FILEJS1</js>
+	</group>
+
+	<group name="group2" location="location1_of_group2"  conflictRule="append">
+		<js>GROUP2_FILEJS1</js>
+	</group>
+   
+   	<group name="group3" location="location1_of_group3"  conflictRule="override">
+   		<js>GROUP3_FILEJS1</js>
+	</group>
+</jso>

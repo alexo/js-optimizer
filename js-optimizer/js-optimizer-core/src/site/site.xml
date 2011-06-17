@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="JavaScript Optimizer">
+  <bannerLeft>
+    <src>./images/logo_ideo.png</src>
+    <href>http://www.ideotechnologies.com</href>
+  </bannerLeft>
+  <bannerRight>
+  	<src>http://sourceforge.net/sflogo.php?group_id=147322&amp;type=2</src>
+    <href>http://sourceforge.net/projects/js-optimizer</href>
+	<alt>SourceForge.net Logo</alt>
+  </bannerRight>
+  <publishDate position="navigation-bottom" format="dd/MM/yyyy"/>
+  <body>
+
+    <menu name="JavaScript Optimizer">
+      <item name="Home" href="index.html" />
+	  <item name="Performances" href="perfs.html"/>
+      <item name="Demo" href="demo.html"/>
+      <item name="Who we are" href="whoWeAre.html" />
+      <item name="Licensing" href="licensing.html" />
+      <item name="Contacts" href="contacts.html" />
+	  <item name="Project Team" href="team-list.html" />
+      <item name="Forum" href="http://sweetdev-ria.ideotechnologies.com/phpBB2/" />
+    </menu>
+    
+     <menu name="Get JavaScript Optimizer">
+		<item name="Downloads" href="downloads.html" />
+		<item name="SVN Source repository" href="source-repository.html" />
+		<item name="Maven 2 repository" href="http://maven.ideotechnologies.com/nexus/content/groups/PUBLIC-GROUP/" />
+		<item name="Change notes" href="changenotes.html" />
+    </menu>
+
+    <menu name="FAQ">
+		<item name="General" href="faq-general.html" />
+    </menu>
+    
+    <menu name="Documentation">
+	    <item name="WIKI" href="http://wiki.ideotechnologies.com/display/JSO/Home" />
+		<item name="Getting Started" href="getting_started.html"/>
+		<item name="XML Descriptor" href="descriptor.html"/>
+<!-- 	<item name="Maven docTODO" href="doc_maven.html"/>  -->
+		<item name="tlddoc" href="./tlddoc/index.html" />
+		<item name="javadoc" href="./apidocs/index.html" />
+		<item name="xref" href="./xref/index.html" />
+		
+		<!-- Pas de tests actuellement -->
+	<!-- 	<item name="xref-testTODO" href="./xref-test/index.html" />  -->
+		<item name="Dependencies" href="dependencies.html"/>
+    </menu>
+
+    <menu name="Partners">
+		<item name="Ideo Technologies" href="http://www.ideotechnologies.com" />
+		<item name="SweetDEV RIA" href="http://sweetdev-ria.sourceforge.net" />
+    </menu>
+
+    <!--  TODO and external links ! -->
+    <menu name="Tools">
+		<item name="Maven 2" href="http://maven.apache.org/" />
+    </menu>
+
+	<!-- ${reports} -->
+    <!-- TODO  put logo : /resources/images/sponsoredbyideo.png -->
+    
+    </body>
+
+</project>

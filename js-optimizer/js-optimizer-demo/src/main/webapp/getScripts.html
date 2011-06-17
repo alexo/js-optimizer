@@ -1,0 +1,20 @@
+<table border="1" bordercolor="gray" width="100%">
+	<tbody id="Results">
+	<tr>
+		<th>Resource Name</th>
+		<th>Response length (byte)</th>
+		<th>Request time (ms)</th>
+	</tr>
+	<tbody>
+</table>
+
+<script type="text/javascript">
+	var urls = getScriptsSrc();
+	while(urls.length>0){
+		var pop = urls.pop();
+		getUrlContent(pop);
+	}
+</script>
+
+<br/>
+<a href="index.jsp">Back</a>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document>
+  <properties>
+    <author>Ideo Technologies</author>
+    <title>JSO - Compress, Optimize JS Files, CSS, IE cache</title>
+  </properties>
+  <head>
+    <meta name="keyword" content="JavaScript Optimizer - JSO - Who we are - Compress, Optimize JS Files, CSS, IE cache" />
+  </head>
+  <body>
+    <section name="More about us">
+        <subsection name="Ideo Technologies">
+           <p>Ideo Technologies is a privately held company. It designs SweetDEV Solutions, including a Struts-based J2EE Framework, SweetDEV Framework, a Web application development environment, SweetDEV RIA (an Ajax tags library).</p>
+           <p>SweetDEV Solutions helps companies to reduce time and effort to build enterprise J2EE applications in a more efficient manner. The SweetDEV Solutions technology is used by hundred of developers worldwide in various companies.</p>
+           <p>For further information, visit our website at <a href="http://www.sweetdev-solutions.com/" title="Link to the company website">www.sweetdev-solutions.com</a>.</p>
+        </subsection>
+    </section>
+
+  </body>
+</document>

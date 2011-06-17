@@ -1,0 +1,1037 @@
+/** ------------------------------------
+ * SweetDEV RIA library
+ * Copyright [2006] [Ideo Technologies]
+ * ------------------------------------
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * 		http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ *
+ * For more information, please contact us at:
+ *         Ideo Technologies S.A
+ *        124 rue de Verdun
+ *        92800 Puteaux - France
+ *
+ *      France & Europe Phone : +33 1.46.25.09.60
+ *         USA & Canada Phone : (201) 984-7514
+ *
+ *        web : http://www.ideotechnologies.com
+ *        email : SweetDEV-RIA@ideotechnologies.com
+ *
+ *
+ * @version 2.2
+ * @author Ideo Technologies
+ */
+
+
+/********************* Calendar **************************/
+
+/* Font of the calendar */
+.ideo-cal-main{
+	font:100% sans-serif;
+	text-align:center;
+}
+
+/* Special style for the tooltip wrapping the calendar */
+.ideo-cal-cto{
+	
+}
+
+/* Display on links */
+.ideo-cal-main a{
+	cursor: pointer;
+	text-decoration: none;
+}
+
+/* Default cells style */
+.ideo-cal-main td.calcell {
+	border:1px solid #E0E0E0;
+	background-color:#FFF;
+}
+
+/* Color of the number of the days */
+.ideo-cal-main td.calcell a{
+	color:#003DB8;
+	text-decoration:none;
+}
+
+/* Today's cell style */
+.ideo-cal-main td.calcell.today{
+	border:1px solid #000;
+}
+
+/* Out of month cells style */
+.ideo-cal-main td.calcell.oom{
+	cursor:default;
+	color:#999;
+	background-color:#EEE;
+	border:1px solid #E0E0E0;
+}
+
+/* Selected cells style */
+.ideo-cal-main td.calcell.selected {
+	color:#003DB8;
+	background-color:#FFF19F;
+	border:1px solid #FF9900;
+}
+
+/* "Ranged selected" cells style */
+.ideo-cal-container td.ideo-cal-rangeSelected{
+	background-color: #FFCC67;
+}
+.ideo-cal-container td.ideo-cal-rangeSelected a{
+}
+
+/* Cells "on mouse up" style */
+.ideo-cal-main td.calcell.calcellhover {
+	cursor:pointer;
+	color:#FFF;
+	background-color:#FF9900;
+	border:1px solid #FF9900;
+}
+
+/* Cells "on mouse up" day number style */
+.ideo-cal-main td.calcell.calcellhover a {
+	color:#FFF;
+}
+
+/* Out of bounds days style */
+.ideo-cal-main td.calcell.previous {
+	color:#CCC;
+}
+
+/* Disabled Days style */
+.ideo-cal-main td.calcell.restricted a {
+	text-decoration: line-through;
+	cursor: default;
+}
+
+/* Head style */
+.ideo-cal-main .calhead {
+	border:1px solid #E0E0E0;
+	vertical-align:middle;
+	background-color:#FFF;
+}
+
+/* Headers elements properties. Nested in calhead. */
+.ideo-cal-main .calheader {
+	text-align:center;
+}
+.ideo-cal-main .calheader img {
+	border:none;
+}
+
+/* Day's letters style */
+.ideo-cal-main .calweekdaycell {
+	color:#666;
+	font-weight:normal;
+}
+
+/* Footer style */
+.ideo-cal-main .calfoot {
+	background-color:#EEE;
+}
+
+/* Not used by default */
+.ideo-cal-main .calrowhead, .ideo-cal-main .calrowfoot {
+	color:#666;
+	font-size:9px;
+	font-style:italic;
+	font-weight:normal;
+	width:15px;
+}
+
+/* Added to perform some correction for Opera 8.5 hover redraw bug */
+table.ideo-cal-main:hover {
+	background-color:#FFF;
+}
+
+/* Input field style */
+.ideo-cal-inputField{
+	border: 1px solid black;	
+}
+
+/* Input display on bad calendar field */
+.ideo-cal-inputFieldBadFormat{
+	color: red;
+}
+
+/* Footer */
+.ideo-cal-footer {
+	text-align: center;
+	font:100% sans-serif;
+	color:#000;
+	font-weight:bold;
+}
+
+/* Links on footer style */
+.ideo-cal-footer a {
+	cursor: pointer;
+}
+.ideo-cal-footer span.ideo-cal-footerLink {
+	border: 1px solid black;
+}
+
+/* Full calendar wrapping container */
+.ideo-cal-container{
+	background-color:#F7F9FB;
+	border:1px solid #7B9EBD;
+	padding:5px;
+}
+.ideo-cal-container .ideo-cal-displayTableWrap{
+	margin-right: 5px;	
+}
+
+/* Icon CSS tool */
+.calendarIcon {
+	border: 0px;
+	vertical-align: middle;
+}
+
+/* StyleClass for the popup link */
+a.ideo-cal-linkClass {
+	/*text-decoration: none;*/
+}
+
+/********* ClickToOpen *****************************/
+
+/* Main style class for the popup */
+.ideo-cto-main {
+    border: 1px solid black;
+}
+
+/* Main style class for the popup content*/
+.ideo-cto-main table {
+    border: 0px;
+    background-color: white;
+}
+
+.ideo-cto-closeIcon{
+	background: url("../images/close.gif") transparent 0 0 no-repeat;	
+}
+
+.ideo-cto-closeIconHover{
+	background: url("../images/close_hover.gif") transparent 0 0 no-repeat;	
+}
+
+.ideo-cto-closeIconDown{
+	background: url("../images/close.gif") transparent 0 0 no-repeat;	
+}
+/****************** NewWindow *************************/
+
+/* Attributes for the main tag of the window */
+.ideo-win-main{
+	border : 1px solid #002185;
+	background-color : white;
+}
+
+
+/* Title bar attributes, when active */
+.ideo-win-active .ideo-win-title{
+	background: url(../images/window/header.gif) 0 0 repeat-x;
+}
+
+
+/* Title bar attributes, when inactive (default) */
+.ideo-win-inactive .ideo-win-title{
+	width : 100%;
+	background-color : gray;
+	border-bottom : 1px solid black;
+	background-image: none
+}
+
+/* Override all the class you want only when active by using : 
+.ideo-win-active .className{
+	
+}
+*/
+
+/* Label style of the window title */
+.ideo-win-main .ideo-win-titleLabel{
+	width : 100%;
+	font-weight : bold;
+	font-family : arial;
+	color: #F5F7FF;
+}
+
+/* Corner picture to resize the window */
+.ideo-win-main .ideo-win-corner{
+	background-image : url("../images/window/corner.png");
+}
+
+/* State bar style (bottom of the window) */
+.ideo-win-main .ideo-win-stateBar{
+	background-color : #D3D3D3;
+	border-top : 1px solid black;
+}
+
+/* State bar label style (bottom of the window) */
+.ideo-win-main .ideo-win-stateBarLabel{
+		
+}
+
+/* For icons, dims are :
+	width : 16px;
+	height : 14px;
+*/
+/* Minimize icon */
+.ideo-win-main .ideo-win-minIcon{
+	background : url("../images/window/minimize.gif") transparent 0 0 no-repeat;
+}
+
+/* Maximize icon */
+.ideo-win-main .ideo-win-maxIcon{
+	background : url("../images/window/maximize.gif") transparent 0 0 no-repeat;
+}
+
+/* Close icon */
+.ideo-win-main .ideo-win-closeIcon{
+	background : url("../images/window/close.gif") transparent 0 0 no-repeat;
+}
+
+/* Restore icon when minimized */
+.ideo-win-main .ideo-win-minRestoreIcon{
+	background : url("../images/window/restore.gif") transparent 0 0 no-repeat;
+}
+
+/* Restore icon when maximized */
+.ideo-win-main .ideo-win-maxRestoreIcon{
+	background : url("../images/window/restore.gif") transparent 0 0 no-repeat;
+}
+
+/* Menu icon */
+.ideo-win-main .ideo-win-menuIcon{
+	background : url("../images/window/world.gif") transparent 0 0 no-repeat;
+}
+
+/********************* ModalPanel *********************/
+
+.ideo-mp-main{
+	background-color : gray;
+	filter : alpha(opacity=50);
+	-moz-opacity: 0.5;
+	opacity: 0.5;
+}
+
+/********************** Treeview **************************/
+
+/* Main treeview class style */
+DIV.ideo-tv-main{
+
+}
+
+/* Treeview toolbar style */
+DIV.ideo-tv-main DIV.ideo-tv-header {
+	border: 1px solid black;
+	background-color: #F9D544;
+	text-align: center;
+	width: 100px;
+}
+
+/* Main tree div style */
+DIV.ideo-tv-main DIV.ideo-tv-tree {
+}
+/* Color of a node found */
+DIV.ideo-tv-main DIV.ideo-tv-tree .foundNode {
+	color: #FA8072;
+}
+/* Color of a node selected */
+DIV.ideo-tv-main DIV.ideo-tv-tree .selectedNode {
+	color: blue;  
+}
+/* Color on a mouseover node */
+DIV.ideo-tv-main DIV.ideo-tv-tree .hoverNode {
+	border : 1px solid;
+}
+/* Style of the surrounding nodes */
+DIV.ideo-tv-main DIV.ideo-tv-tree .beforeNode {
+	border-top : 1px solid;
+}
+DIV.ideo-tv-main DIV.ideo-tv-tree .afterNode {
+	border-bottom : 1px solid;
+}
+
+/* Text color for the node 0 */
+.nodeLevel0 { 
+	color: black;
+}
+/* Icon when node 0 is opened */
+.nodeLevel0_icon_open { 
+	/* This width depends on the treeview icons's width, to shift the associated text */
+	padding-left:17px; 
+	background: url(../images/treeview/folders/lm2.gif) 0 0 no-repeat; 
+}
+/* Icon when node 0 is closed */
+.nodeLevel0_icon_close { 
+	padding-left:17px; 
+	background: url(../images/treeview/folders/lp2.gif) 0 0 no-repeat; 
+}
+.nodeLevel1 { 
+	color: black;
+}
+.nodeLevel1_icon_open { 
+	padding-left:17px; 
+	background: url(../images/treeview/folders/lm2.gif) 0 0 no-repeat; 
+}
+.nodeLevel1_icon_close { 
+	padding-left:17px;
+	background: url(../images/treeview/folders/lp2.gif) 0 0 no-repeat; 
+}
+.nodeLevel2 { 
+	color: black;
+}
+.nodeLevel2_icon_open { 
+	padding-left:17px;
+	background: url(../images/treeview/folders/lm2.gif) 0 0 no-repeat; 
+}
+.nodeLevel2_icon_close { 
+	padding-left:17px;
+	background: url(../images/treeview/folders/lp2.gif) 0 0 no-repeat; 
+}
+.nodeLevel3 { 
+	color: black;
+}
+.nodeLevel3_icon_open { 
+	padding-left:17px;
+	background: url(../images/treeview/folders/lm2.gif) 0 0 no-repeat; 
+}
+.nodeLevel3_icon_close { 
+	padding-left:17px;
+	background: url(../images/treeview/folders/lp2.gif) 0 0 no-repeat; 
+}
+.nodeLevel4 { 
+	color: black;
+}
+.nodeLevel4_icon_open { 
+	padding-left:17px;
+	background: url(../images/treeview/folders/lm2.gif) 0 0 no-repeat; 
+}
+.nodeLevel4_icon_close { 
+	padding-left:17px;
+	background: url(../images/treeview/folders/lp2.gif) 0 0 no-repeat; 
+}
+
+/* Loading icon */
+.ygtvloading { background: url(../images/treeview/default/loading.gif) 0 0 no-repeat; width:16px; height:22px; }
+
+
+/*********************** Export Tag *************************/
+/* Validate button style */
+.ideo-exp-validateButton {
+}
+/* cancel button style */
+.ideo-exp-cancelButton {
+} 
+
+/********************** Menu ************************************/
+
+/* Main style for menus */
+ul.ideo-mnu-main, ul.ideo-mnu-main ul{
+    border-top : 1px solid white;
+    border-left : 1px solid white;
+    border-right : 1px solid black;
+    border-bottom : 1px solid black;
+    background-color : #D3D3D3;
+    cursor : default;
+}
+
+/* Menu items style */
+ul.ideo-mnu-main li{
+    color : black;
+    text-decoration : none;
+}
+
+/* Menu items style, on hover. Override both of the following classes for browser compatibility */
+ul.ideo-mnu-main li:hover{
+    background-color : #00008B;
+    color : white;
+}
+ul.ideo-mnu-main li.iehover{
+    background-color : #00008B;
+    color : white;
+}
+
+/* Image to display the sub elements */
+ul.ideo-mnu-main div{
+    width : 16px;
+    height : 16px;
+    background-image : url(../images/menu/next.gif);
+}
+/* this previous image on hover */
+ul.ideo-mnu-main div.iehover{
+    background-image : url(../images/menu/next_invert.gif);
+}
+ul.ideo-mnu-main li:hover > div{
+    background-image : url(../images/menu/next_invert.gif);
+}
+
+/* Checked image, and on hover */
+ul.ideo-mnu-main li.ideo-mnu-check{
+    background-image : url(../images/menu/check.gif);
+}
+ul.ideo-mnu-main li.ideo-mnu-check:hover{
+    background-image : url(../images/menu/check_invert.gif);
+}
+ul.ideo-mnu-main li.ideo-mnu-checkover{
+    background-image : url(../images/menu/check_invert.gif);
+}
+
+/************* Menu Bar *************/
+/* Same than for the menu styles */
+
+ul.ideo-mnb-main{
+    border-top : 1px solid white;
+    border-left : 1px solid white;
+    border-right : 1px solid black;
+    border-bottom : 1px solid black;
+    background-color : #D3D3D3;
+    cursor : default;
+}
+
+ul.ideo-mnb-main > li:hover{
+    background-color : #00008B;
+    color : white;
+}
+ul.ideo-mnb-main li.iehovermenubar {
+    background-color : #00008B;
+    color : white;
+}
+
+/****************************** SPliter *******************************/
+
+/* Vertical and Horizontal spliters styles */
+.ideo-vsp-main{
+    width : 3px;
+    background-color : black;
+}
+
+.ideo-hsp-main{
+    height : 3px;
+    background-color : black;
+}
+
+.ideo-vsp-zone{
+
+}
+
+
+.ideo-hsp-zone{
+ /* overflow : auto; */ /* set it to hidden to hide the scrollbar */
+}
+
+/*************************** FileUpload **************************/
+.ideo-fu-dellink{
+    color: rgb(0, 0, 204);
+    text-decoration: underline;
+    cursor: pointer;
+    white-space: nowrap;	
+}
+
+/************************** Tabbox *******************************/
+/* These definitions override the yahoo ones, to provide an easier customization */
+
+/* Main css style surrounding the tabbox */
+.ideo-tab-main{
+	
+}
+
+/* Content style of the tabbox main container */
+.ideo-tab-main .ideo-tab-content{
+/*    border:1px solid #CCCCCC; */
+}
+
+/* Navigation container (clickable tabs)*/
+.ideo-tab-main .ideo-tab-nav{
+	
+}
+
+/* Tab unselected */
+.ideo-tab-main .ideo-tab-nav a{
+	
+}
+
+/* Tab selected */
+.ideo-tab-main .ideo-tab-nav .selected a{
+/*    background-color:#FFFFFF;  */
+}
+/* On tab hover */
+.ideo-tab-main .ideo-tab-nav a:hover{
+/*    background-color:#FFFFFF; */	
+} 
+
+/* default space between tabs */
+.ideo-tab-main .ideo-tab-nav li {
+/*    margin-right:0.5em; *//* horizontal tabs */
+}
+/* default space between sides tabs */
+.yui-navset-left .ideo-tab-nav li, .yui-navset-right .ideo-tab-nav li {
+ /*   margin:0 0 0.5em; *//* vertical tabs */
+}
+
+/* Differents Orientations. The color should be your nav's border color */
+.yui-navset-top .ideo-tab-nav li a {
+/*    border-bottom:1px solid #CCCCCC;*/
+}
+.yui-navset-bottom .ideo-tab-nav li a { 
+/*	border-top:1px solid #CCCCCC;*/ 
+}
+.yui-navset-left .ideo-tab-nav li a {
+/*    border-right:1px solid #CCCCCC;*/
+}
+.yui-navset-right .ideo-tab-nav li a {
+/*    border-left:1px solid #CCCCCC;*/
+}
+
+/* Font of tabs label */
+.ideo-tab-main li em { 
+/*	font-style:normal;  */
+}
+
+/* Image for closing tab */
+/* Dims should be 16x16 for a better rendering */
+.ideo-tab-closeImg {
+   background-image: url(../images/tabbox/close.gif);
+}
+
+
+/********************* Combo Multi **********************/
+
+/* Container to display combo's suggestions */
+DIV.ideo-cbo-container{
+    border: 1px solid black;
+    background-color: white;
+    width: 300px;
+}
+/* Title style of the combo multi (header) */
+DIV.ideo-cbo-title{
+	font-size : 2em;
+	font-weight : bold;
+	margin-top : 0.67em;
+	margin-right-value : 0pt;
+	margin-bottom : 0.67em;
+	margin-left-value : 0pt;
+}
+
+/* Height of the SUGGESTIONS container (excluded container header and footer) and suggestions params */
+DIV.ideo-cbo-sugg {
+    height: 200px;
+}
+DIV.ideo-cbo-sugg {
+    font: 10px verdana, sans-serif;
+    cursor: pointer;
+}
+/* Background color of a selected item */
+DIV.ideo-cbo-sugg  DIV.selected {
+    background-color: #88aacc;
+}
+/* Background color on over an item */
+DIV.ideo-cbo-sugg  DIV.hover {
+    background-color: #cceeff;
+}
+/* Standard item background */
+DIV.ideo-cbo-sugg  DIV.normal {
+    background-color: white;
+}
+/* Style of the separator between selected items and others */
+DIV.ideo-cbo-listSeparator {
+	background-color:#ABABAB;
+}
+/* Container for actions button */
+DIV.ideo-cbo-container DIV.ideo-cbo-btnContainer {
+    background-color: #CCCCCC;
+}
+INPUT.ideo-cbo-btn{
+	
+}
+/* Truncated displayer style */
+DIV.ideo-cbo-sugg  SPAN.ideo-cbo-trunc {
+    color: red;
+    font-style: italic;
+    font-weight: bold;
+}
+
+/* Additionnal message container style (footer) */
+DIV.ideo-cbo-container DIV.ideo-cbo-msgContainer {
+    background-color: #EEEEEE;
+}
+/* Additionnal information message text style (footer) */
+DIV.ideo-cbo-container DIV.ideo-cbo-msgContainer DIV.ideo-cbo-info {
+    color: green;
+}
+/* Additionnal exception message text style (footer) */
+DIV.ideo-cbo-container DIV.ideo-cbo-msgContainer DIV.ideo-cbo-exception {
+    color: red;
+}
+
+/************** Accordion *******************/
+.ideo-acc-header{
+	width:100%;
+	background-color: #E5ECFF;
+	color : #0040F0;
+	border-color: #0040F0;
+}
+
+
+/************************  pagebar  *************************/
+
+.ideo-pgb-pagebar {
+	background-color : #D3D3D3;
+}
+
+.ideo-pgb-pagebar .ideo-pgb-actualPageNumber{
+	color:red; 
+	font-weight:bold;
+	text-decoration : none;
+}
+
+.ideo-pgb-pagebar .ideo-pgb-pageNumber{
+	color:black; 
+	font-weight:normal;
+}
+
+/************************  grid  *************************/
+
+.ideo-ndg-table{
+/*	border: 1px solid #002185; */	
+}
+
+/* Headers style */
+.ideo-ndg-table .ideo-ndg-header{
+	background: url(../images/datagrid/header.gif) 0 0 repeat-x;
+	color: #DBE4FF;
+	font-weight: bold;
+	text-align: center;
+	cursor: default;
+}
+
+/* Image set to defined an ascendant or descendant sort */
+.ideo-ndg-table .ideo-ndg-headerSortDesc{
+	background : url(../images/datagrid/sortDesc.gif) 0 0 no-repeat;
+}
+.ideo-ndg-table .ideo-ndg-headerSortAsc{
+	background : url(../images/datagrid/sortAsc.gif) 0 0 no-repeat;
+}
+
+/* Image used on column Drag Drop */
+.ideo-ndg-table .ideo-ndg-arrow{
+	background-image : url(../images/splitter_pos.gif);
+}
+
+
+/* Body of the grid style */
+.ideo-ndg-table .ideo-ndg-divBody{
+	background-color : #E6E6E6;
+}
+
+/* Details content style */
+.ideo-ndg-table .ideo-ndg-detail{
+	font-style: italic;
+}
+
+/* Style for odd/even rows */
+.ideo-ndg-table .ideo-ndg-oddRow{
+	background-color : #DFE6FB;
+}
+.ideo-ndg-table .ideo-ndg-parRow{
+	background-color : #F1F6FD;
+}
+
+
+/* Selected row style */
+.ideo-ndg-table .ideo-ndg-selection{
+	background-color : #4C7F9E;
+	color : #DFE6FB;
+}
+
+/* Splitter columns style when resizable */
+.ideo-ndg-table .ideo-ndg-headSeparator{
+	background-color:black;
+	cursor:e-resize;
+}
+
+/* Splitter columns style when non resizable */
+.ideo-ndg-table .ideo-ndg-headSeparatorNoResize{
+	background-color:black;
+}
+
+/* Grid resizer style */
+.ideo-ndg-table .ideo-ndg-resizer{
+	background: url(../images/datagrid/resize.gif) transparent 0 0 no-repeat;
+}
+
+/* Waiting message class */
+.ideo-ndg-waitingMessage{
+	background-color: #FFFFFF;
+}
+
+/************************  alert  *************************/
+
+/* alert class */
+.ideo-alt-zone {
+	background-color: #777777;
+	padding : 10px;
+}
+
+.ideo-alt-message {
+	padding-left:30px; 
+}
+
+.ideo-alt-icon {
+	width : 20px;
+}
+
+.ideo-alt-buttonBar {
+
+}
+
+.ideo-alt-button {
+
+}
+
+.ideo-alt-plain {
+	color : black;
+}
+
+.ideo-alt-plainIcon {
+	background: url(../images/datagrid/resize.gif) transparent 0 0 no-repeat;
+}
+
+.ideo-alt-info {
+	color : green;
+}
+
+.ideo-alt-infoIcon {
+	background: url(../images/datagrid/resize.gif) transparent 0 0 no-repeat;
+}
+
+.ideo-alt-warn {
+	color : yellow;
+}
+
+.ideo-alt-warnIcon {
+	background: url(../images/datagrid/resize.gif) transparent 0 0 no-repeat;
+}
+
+.ideo-alt-error {
+	color : red;
+}
+
+.ideo-alt-errorIcon {
+	background: url(../images/datagrid/resize.gif) transparent 0 0 no-repeat;
+}
+
+
+/************************  collapse  *************************/
+
+/**
+ * This class is apply to collapse header
+ */
+.ideo-clp-header {
+	background-color : #E5ECFF;
+	border : 1px solid;
+}
+
+/**
+ * This class is apply to collapse header when  it s expanded
+ */
+.ideo-clp-header-exp {
+	background-image: url(../images/collapse/collapse_expanded.gif); 
+	background-repeat : no-repeat;
+	padding-left : 25px; 
+}
+
+/**
+ * This class is apply to collapse header when  it s collapsed
+ */
+.ideo-clp-header-col {
+	background-image: url(../images/collapse/collapse_collapsed.gif); 
+	background-repeat : no-repeat;
+	padding-left : 25px; 
+}
+
+/**
+ * This class is apply to collapse body
+ */
+.ideo-clp-body {
+
+}
+/**
+ * This class is apply to collapse body when  it s expanded
+ */
+.ideo-clp-body-exp {
+}
+/**
+ * This class is apply to collapse body when  it s collapsed
+ */
+.ideo-clp-body-col {
+}
+
+/************************  list  *************************/
+/**
+ * This class is apply to ul tag containing all items li
+ */
+.ideo-lst-ul {
+	padding-left:0px;
+	margin-top:0px;
+	margin-left:0px;
+}
+
+
+/**
+ * This class is apply to each li tag containing an item
+ */
+.ideo-lst-li {
+
+}
+
+/**
+ * This class is apply to list containing all items
+ */
+.ideo-lst-list {
+	border:1px solid;
+}
+
+
+/**
+ * This class is apply to each item
+ */
+.ideo-lst-item {
+	text-decoration: none;
+}
+
+/**
+ * This class is apply to the hover item
+ */
+.ideo-lst-item:hover {
+	background-color : #C0C0C0;
+	color : #FFFFFF;
+}
+/************************  control error  *************************/
+
+
+/**
+ * This class is apply to a component on error
+ */
+.ideo-msg-error {
+	
+}
+
+/**
+ * This class is apply to a component label when it's on error
+ */
+.ideo-msg-labelError {
+	color : #FF0000;
+}
+
+/**
+ * This class is apply to messenger icon for an error message
+ */
+.ideo-msg-iconError {
+	background-image : url("../images/control/error.png"); 
+	margin-left : 16px;
+	padding-left : 16px;
+}
+
+/**
+ * This class is apply to messenger icon for an non error message
+ */
+.ideo-msg-iconNotError {
+	background-image : url("../images/control/not_error.png"); 
+	margin-left : 16px;
+	padding-left : 16px;
+}
+
+/**
+ * This class is apply to messenger message for an error message
+ */
+.ideo-msg-messageError {
+	color : #FF0000;
+}
+
+/**
+ * This class is apply to messenger message for an non error message
+ */
+.ideo-msg-messageNotError {
+	color : #000000;
+}
+
+
+/*********************** Suggest **********************************/
+
+/* The way to render the different button states. 16x16 images */
+.ideo-sug-buttonLoading{
+	background: url("../images/spinner.gif") no-repeat 0 0;
+}
+.ideo-sug-buttonOut{
+	background: url("../images/suggest/buttonOut.png") no-repeat 0 0;
+}
+.ideo-sug-buttonOver{
+	background: url("../images/suggest/buttonOver.png") no-repeat 0 0;	
+}
+.ideo-sug-buttonDown{
+	background: url("../images/suggest/buttonDown.png") no-repeat 0 0;	
+}
+
+/*** Items ***/
+
+/* This class is applied to each item */
+.ideo-sug-item {
+}
+
+/* This class is applied to the hover item */
+.ideo-sug-item:hover {
+	background-color : gray;
+	color : white;
+}
+
+/* This class is applied to all unselected items */
+.ideo-sug-unselectedItem {
+	background-color : white;
+	color : black;
+}
+
+/* This class is applied to the selected items */
+.ideo-sug-selectedItem {
+	background-color : purple;
+	color : white;
+}
+
+/* This class is applied to the highlightened item */
+.ideo-sug-highlightenedItem {
+	background-color : blue;
+	color : white;
+}
+
+
+/*** Popup ***/
+
+/* This class is applied to the div containing header, items and footer */
+.ideo-sug-popup {
+	border: 1px solid;
+	background-color: white;
+}
+
+/* This class is applied to item list header */
+.ideo-sug-header {
+	border: 1px solid;
+}
+
+/* This class is applied to the div containing the items */
+.ideo-sug-items {
+	height:200px;
+	width:150px;
+}
+
+/* This class is applied to the item list footer */
+.ideo-sug-footer {
+	border: 1px solid;
+}

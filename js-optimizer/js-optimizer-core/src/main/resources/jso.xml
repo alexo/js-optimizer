@@ -1,0 +1,107 @@
+<!DOCTYPE jso [
+  <!-- Root document element -->
+  <!ELEMENT jso (default*,group*)>
+  <!-- Define default values (since 2.2+)-->  
+  <!ELEMENT default EMPTY>
+  <!-- Define a group of resources -->
+  <!ELEMENT group (js|css|group-ref)*>
+  <!-- Define a js file resource -->
+  <!ELEMENT js (#PCDATA)>
+  <!-- Define a css file resource -->
+  <!ELEMENT css (#PCDATA)>
+  <!-- Dependencies definition. 
+  Indicates that the current group depends on another one, 
+  which therefore must be included too -->
+  <!ELEMENT group-ref (#PCDATA)>
+  
+<!-- @reference: http://wiki.ideotechnologies.com/display/JSO -->
+<!-- 
+  -=- Attributs list of 'default' element
+    - key : attribute name to set default value.
+      - location : set a default path to locate the resources for all group without location. 
+    - timeStampPolicy : Select a default timestamp policy (timeStampPolicy inheritance has priority over default timeStampPolicy).
+      - no    : never add a timestamp suffix and the URL link to the resource.
+      - all   : always add a timestamp suffix and the URL link to the resource.             
+      - local : (default) add a timestamp suffix and the URL link to the resource only if the resource is local at the application 
+    - conflictRule : Define the behaviour when a same group is defined in several jso.xml file.
+      - override  : the group override the previous one
+      - append    : the resource of the group is appended to the previous one.	
+-->
+  <!ATTLIST default
+    key (location|timeStampPolicy|conflictRule) #REQUIRED>    	
+  <!ATTLIST default
+    value CDATA #REQUIRED>
+
+<!-- 
+  -=- Attributs list of 'default' element
+    - name : name of a group of resources.
+    - minimise : [true|false] (default 'false') if 'true' js resources will be minimized (text compression).
+    - minimizeCss : NOT USED
+    - retention : [true|false] (default 'false') if 'true' the resource copy on web-content functionnality will be active.
+    - location : set a path to locate the resources. Inheritable.
+    - timeStampPolicy : (since 2.2+) Select a timestamp policy. Inheritable.
+      - no    : never add a timestamp suffix and the URL link to the resource.
+      - all   : always add a timestamp suffix and the URL link to the resource.             
+      - local : (default) add a timestamp suffix and the URL link to the resource only if the resource is local at the application 
+    - conflictRule : (since 2.2+) Define the behaviour when groups with same 'name' are defined in several jso.xml file. Inheritable.
+      - override  : the group override the previous one
+      - append    : the resource of the group is appended to the previous one.	
+
+    'location', 'timeStampPolicy' and 'conflictRule' defined into a group override 'default' values.
+ -->
+  <!ATTLIST group
+    name CDATA #REQUIRED>
+  <!ATTLIST group
+    minimize (true|false) #IMPLIED>
+  <!ATTLIST group
+    minimizeCss (true|false) #IMPLIED>            
+ 	<!ATTLIST group
+    retention (true|false) #IMPLIED>
+  <!ATTLIST group
+    location CDATA #IMPLIED>
+  <!ATTLIST group
+    timeStampPolicy (all|no|local) #IMPLIED>        
+  <!ATTLIST group
+    conflictRule  (override|append) #IMPLIED>                   
+]>
+
+<jso>
+<!--
+EXAMPLE : 
+    <group name="yui" >
+        <js>/resources/js/Externs/yui/yahoo.js</js>
+        <js>/resources/js/Externs/yui/event.js</js>
+        <js>/resources/js/Externs/yui/dom.js</js>
+        <js>/resources/js/Externs/yui/dragdrop.js</js>
+        <js>/resources/js/Externs/yui/log.js</js>
+        <js>/resources/js/Externs/yui/calendar.js</js>
+        <js>/resources/js/Externs/yui/treeview.js</js>
+        <js>/jsext/animation.js</js>
+        <js>/jsext/connection.js</js>
+    </group>
+
+    <group name="ext-js">
+        <css>/jsext/resources/css/ext-all.css</css>
+        <css>/jsext/resources/css/ytheme-aero.css</css>
+
+        <js>/jsext/ext-yui-adapter.js</js>
+        <js>/jsext/ext-all-debug.js</js>
+    </group>
+
+    <group name="application">
+        <js>/js/quickSelect.js</js>
+        <js>/js/lim.js</js>
+    </group> 
+
+    <group name="all">
+        <group-ref>yui</group-ref>
+        <group-ref>ext-js</group-ref>
+        <group-ref>application</group-ref>
+    </group>
+
+    <group name="monitoringForum">
+        <js>monitoringForum/mForum.js</js>
+        <css>monitoringForum/mForum.css</css>
+    </group>
+-->
+</jso>

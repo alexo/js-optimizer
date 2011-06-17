@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document>
+  <properties>
+    <author>Ideo Technologies</author>
+    <title>Licence</title>
+  </properties>
+  <head>
+    <meta name="keyword" content="JavaScript Optimizer - JSO - Licence - Compress, Optimize JS Files, CSS, IE cache" />
+  </head>
+  <body>
+    <section name="License">
+      
+      <p><strong>JavaScript Optimizer - JSO</strong> is an <strong>Open Source</strong> software licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0.html" title="Link to Apache licence on Apache server">Apache Licence, Version 2.0</a>.</p>
+
+      <subsection name=" Apache License, Version 2.0">
+
+			<p>Copyright 2007 Ideo Technologies</p>
+			<p><code>Licensed under the Apache License, Version 2.0 (the "License"); 
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at 
+
+		http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.</code></p>
+  
+      </subsection>
+            
+    </section>
+
+  </body>
+</document>

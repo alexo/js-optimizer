@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document>
+	<properties>
+		<author>Ideo Technologies</author>
+		<title>JSO - Compress, Optimize JS Files, CSS, IE cache</title>
+	</properties>
+	<head>
+		<meta name="keyword" content="JavaScript Optimizer - JSO - Compress, Optimize JS Files, CSS, IE cache" />
+	</head>
+	<body>
+    	<section name="News">
+			<ul>
+				<li><strong>News 08-11-2010</strong> : <a href="http://sourceforge.net/project/showfiles.php?group_id=208046" title="download it on Sourceforge"><strong>JavaScript Optimizer - JSO</strong> v.2.2.3</a> has been released.  It corrects some minor bugs.</li>
+						
+			<li><strong>News 12-07-2010</strong> : <a href="http://sourceforge.net/project/showfiles.php?group_id=208046" title="download it on Sourceforge"><strong>JavaScript Optimizer - JSO</strong> v.2.2.1</a> has been released. It optimizes configuration file.</li>
+			
+				<li><strong>News 03-06-2008</strong> : <a href="http://sourceforge.net/project/showfiles.php?group_id=208046" title="download it on Sourceforge"><strong>JavaScript Optimizer - JSO</strong> v.2.1.4</a> has been released. It corrects one major bug and enables you to use variables in the location attribute.</li>
+				<li><strong>News 12-02-2008</strong> : <a href="http://sourceforge.net/project/showfiles.php?group_id=208046" title="download it on Sourceforge"><strong>JavaScript Optimizer - JSO</strong> v.2.1.3</a> has been released. It embetters the standalone use and correct one minor bug.</li>
+				<li><strong>News 09-24-2008</strong> : <a href="http://sourceforge.net/project/showfiles.php?group_id=208046" title="download it on Sourceforge"><strong>JavaScript Optimizer - JSO</strong> v.2.1.2</a> has been released, allowing the loading of a pre-minimized file on a distant server</li>
+				<li><strong>News 08-01-2008</strong> : <a href="http://sourceforge.net/project/showfiles.php?group_id=208046" title="download it on Sourceforge"><strong>JavaScript Optimizer - JSO</strong> v.2.1.1</a> has been released, correcting a configuration loading order bug</li>
+				<li><strong>News 05-06-2008</strong> : <a href="http://sourceforge.net/project/showfiles.php?group_id=208046" title="download it on Sourceforge"><strong>JavaScript Optimizer - JSO</strong> v.2.1</a> has been released </li>
+				<li><strong>News 03-12-2008</strong> : <a href="http://sourceforge.net/project/showfiles.php?group_id=208046" title="download it on Sourceforge"><strong>JavaScript Optimizer - JSO</strong> v.2.0</a> has been released </li>
+				<li>Subscribe to our RSS Feed <a href="http://sourceforge.net/export/rss2_project.php?group_id=208046"><img src="./images/rss.png"/></a></li>
+			</ul>
+	    </section>
+	
+	    <section name="Overview">
+	    	<subsection name="Enhance your JavaScript and CSS resources managing">
+		    	<strong>JavaScript Optimizer - JSO</strong> is a project that allow you to manage easily your JavaScript and CSS resources and to reduce the amount of data transfered between the server and the client.<br/>
+		    	To perform this, the following optimizations are performed : <br/>
+		    	<ul>
+		    		<li>Cache optimization : by adding a timestamp and headers informations, the caching resources is more efficient.</li>
+		    		<li>JavaScript files merging, minimizing if possible.</li>
+		    		<li>Serving CSS files.</li>
+		    	</ul>
+		    	Through these 3 steps, the data transfered is significally reduced.<br/><br/>
+		    	The resources managing is externalized in an XML descriptor, which make it really easier to maintain. 
+			</subsection>      
+	    	<subsection name="How it works?">
+		    	The method to manage the resources is really simple! Here are the features provided by <strong>JavaScript Optimizer - JSO</strong>:<br/>
+		    	- In an XML descriptor, the whole application's resources are linked into groups. It is up to you to create your groups and decide whether the resources must be merged and/or minimized or not.<br/>
+				- These concatenated/minimized files are buffered server side and are tagged with the files last modification date.<br/>
+				- As easy as looking at this date, <strong>JavaScript Optimizer - JSO</strong> regenerate a concatenated file every time a resource is modified (mainly for dev mode).<br/>
+				- A YUICompressor associated and a JSMin are integrated to compress the resulting file as much as possible.<br/>
+				- To provide an easy debugging, a special cookie can be set and override every existing configuration to get to exploded mode. (see <a href="faq-general.html">FAQ</a> for more information).<br/>
+				- In IE, when the cache is defined as "Refresh for every visit", many requests are performed from the client to the server to check if the file is up-to-date or not. <strong>JavaScript Optimizer - JSO</strong> permits to avoid these useless requests by setting a expire to resources.								    	      
+			</subsection>         
+	    </section>
+	    <section name="Notes">
+	       	<subsection name="Performances">
+		    	As you will see in the <a href="demo.html">Demo</a> section, the code reduction for some basics JavaScript test files is significant.<br/>
+		    	This impact both the request time and the response length : a single request for JavaScripts file and the response length divided by 2-3.<br/>
+		    	But better than a long speech, watch the <a href="perfs.html">Performances Matrix</a>, try it <a href="http://js-optimizer.ideotechnologies.com/js-optimizer-demo/">online</a> or download it and see how mandatories these optimizations are.   
+			</subsection>
+	    </section>
+	</body>
+</document>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document>
+  <properties>
+    <author>Ideo Technologies</author>
+    <title>JSO - download a tool to compress, optimize JS Files, CSS, IE Cache</title>
+  </properties>
+  <head>
+    <meta name="keyword" content="JavaScript Optimizer - JSO - Downloads - Compress, Optimize JS Files, CSS, IE cache" />
+  </head>
+  <body>
+    <section name="Downloads">
+
+		<p><strong>JavaScript Optimizer - JSO</strong> is a tool that manages JavaScript files into a web application.</p>		
+
+		<p>You will find on the <a href="http://sourceforge.net/project/showfiles.php?group_id=208046">SourceForge download page</a> two packages :</p>
+
+		<subsection name="Package JavaScript Optimizer - JSO">
+			<p>The "core" main package which contains:
+				<dl>
+					<dt>js-optimizer-core-X.X.jar</dt>
+					<dd>JAR file containing the JavaScript Optimizer library.</dd>
+	
+					<dt>js-optimizer-core-X.X-sources.jar</dt>
+					<dd>JAR file containing the JavaScript Optimizer library sources.</dd>
+				</dl>
+				<a href="http://sourceforge.net/project/showfiles.php?group_id=208046&amp;package_id=249417" title="download JavaScript Optimizer - JSO core package">Download theses files on SourceForge.</a>
+			</p>
+		</subsection>
+
+		<subsection name="Package JavaScript Optimizer - JSO demo">
+			<p>The "demo" web application:
+				<dl>
+					<dt>js-optimizer-demo-X.X.war</dt>
+					<dd>The "Demo" web application showing how to use JavaScript Optimizer.</dd>
+				</dl>
+				<a href="http://sourceforge.net/project/showfiles.php?group_id=208046&amp;package_id=249418" title="download JavaScript Optimizer - JSO demo package">Download this file on SourceForge.</a>
+			</p>
+		</subsection>
+	</section>
+  </body>
+</document>

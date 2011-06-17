@@ -1,0 +1,48 @@
+<!--  TEST BASIC FUNCTIONALITY OF JSO CONFIGURATION LOADING -->
+<jso>
+	<group name="group1" minimize="false">
+		<!--  no sub groups  -->
+		<js>/MockContext/resources/js/group1/js1.js</js>
+		<js>/MockContext/resources/js/group1/js2.js</js>
+		<css>/MockContext/resources/css/group1/css1.css</css>
+		<css>/MockContext/resources/css/group1/css2.css</css>
+	</group>
+
+	<group name="group2" minimize="false">
+		<js>/MockContext/resources/js/group2/js1.js</js>
+		<css>/MockContext/resources/css/group2/css1.css</css>
+	</group>
+   
+   	<group name="group3" minimize="false" location="http://mocksite/">
+		<js>/MockContext/resources/js/group3/js1.js</js>
+		<group-ref>group2</group-ref>
+		<js>/MockContext/resources/js/group3/js2.js</js>
+		<group-ref>group1</group-ref>
+		<css>/MockContext/resources/css/group3/css1.css</css>
+		<css>/MockContext/resources/css/group3/css2.css</css>
+	</group>
+   
+	
+	<group name="group1m" >
+		<js>/MockContext/resources/js/group1/js1.js</js>
+		<js>/MockContext/resources/js/group1/js2.js</js>
+		<css>/MockContext/resources/css/group1/css1.css</css>
+		<css>/MockContext/resources/css/group1/css2.css</css>	
+	</group>
+	
+	<group name="group2m" >
+		<js>/MockContext/resources/js/group2/js1.js</js>
+		<css>/MockContext/resources/css/group2/css1.css</css>
+	</group>
+	
+	<group name="group3m" location="http://mocksite/">
+		<group-ref>group1m</group-ref>		
+		<group-ref>group2m</group-ref>		
+		<js>/MockContext/resources/js/group3/js1.js</js>
+		<js>/MockContext/resources/js/group3/js2.js</js>
+		<css>/MockContext/resources/css/group3/css1.css</css>
+		<css>/MockContext/resources/css/group3/css2.css</css>
+	</group>
+	
+	
+</jso>

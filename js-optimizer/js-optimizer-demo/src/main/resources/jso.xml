@@ -1,0 +1,154 @@
+<!DOCTYPE jso [
+        <!ELEMENT jso (group|mode)*>
+        <!ELEMENT group (js|css|group-ref)*>
+
+        <!ATTLIST group
+                name CDATA #REQUIRED>
+<!-- setting minimise="false" allows to disable JS minimisation for this group. Useful is the scripts are already compacted.-->
+        <!ATTLIST group
+                minimize CDATA #IMPLIED>
+<!-- setting minimizeCss to true enable the Css Merging and Compression. BE CAREFUL to the url() element that may result in path errors -->
+        <!ATTLIST group
+                minimizeCss CDATA #IMPLIED>
+<!-- setting retention to true enable the retention of the created concatenated js. Avoid the buffering -->
+        <!ATTLIST group
+                retention CDATA #IMPLIED>
+<!-- set a path to locate the resources. Inheritable. Set it to "" to cancel the inheritance
+	If the group is set as minimized, a file with the "GROUP_NAME.js" must be defined in the "location/jso/"
+	For example : 
+		location = http://localhost:8082/
+		group = minimized
+		
+		Set a file named minimized.js at http://localhost:8082/jso/minimized.js	 
+	 -->
+        <!ATTLIST group
+                location CDATA #IMPLIED>
+<!-- Indicates that the given JavaScript file is a part of a group-->
+        <!ELEMENT js (#PCDATA)>
+<!-- Indicates that the given CSS file is a part of a group-->
+        <!ELEMENT css (#PCDATA)>
+<!-- Dependencies definition. Indicates that the current group depends on another one, which therefore must be included too -->
+        <!ELEMENT group-ref (#PCDATA)>
+        ]>
+<jso>
+    <group name="css" minimizeCss="true">
+		<css>/resources/css/democss1.css</css>
+		<css>/resources/css/democss2.css</css>
+    </group>
+	<group name="js-common">
+		<js>/resources/js/RIATimer.js</js>
+		<js>/resources/js/Ajax.js</js>
+		<js>/resources/js/AjaxPooler.js</js>
+		<js>/resources/js/common/demojs1common.js</js>
+		<js>/resources/js/common/demojs2common.js</js>
+		<js>/resources/js/util.js</js>
+	</group>
+	<group name="js">
+		<js>/resources/js/demojs1.js</js>
+		<js>/resources/js/demojs2.js</js>
+		<group-ref>js-common</group-ref>
+	</group>
+
+    <group name="demo-full-min" retention="true">
+        <group-ref>js</group-ref>
+        <group-ref>css</group-ref>
+    </group>
+    <group name="demo-full-complete" minimize="false">
+        <group-ref>js</group-ref>
+        <group-ref>css</group-ref>
+    </group>
+
+    <group name="sweetdevria-ext">
+    	<js>/SweetDevRIA/js/fake.js</js>
+        <js>/SweetDevRIA/js/Externs/yui/yahoo.js</js> 
+        <js>/SweetDevRIA/js/Externs/yui/event.js</js> 
+        <js>/SweetDevRIA/js/Externs/yui/dom.js</js> 
+        <js>/SweetDevRIA/js/Externs/yui/dragdrop.js</js> 
+        <js>/SweetDevRIA/js/Externs/yui/log.js</js> 
+        <js>/SweetDevRIA/js/Externs/yui/calendar.js</js> 
+        <js>/SweetDevRIA/js/Externs/yui/tabview.js</js> 
+        <js>/SweetDevRIA/js/Externs/yui/treeview.js</js> 
+        <js>/SweetDevRIA/js/Externs/yui/animation-min.js</js> 
+        <js>/SweetDevRIA/js/Externs/template.js</js>  
+        <js>/SweetDevRIA/js/Externs/Json/json.js</js> 
+    </group>
+
+    <group name="sweetdevria-core">
+    	<js>/SweetDevRIA/js/Components/SweetDevRiaInitialization.js</js> 
+        <js>/SweetDevRIA/js/Externs/Log4Js.js</js>
+        <css>/SweetDevRIA/css/iehack.css</css> 
+        <css>/SweetDevRIA/css/sweetdev-ria-core.css</css>
+        <css>/SweetDevRIA/css/sweetdev-ria-default-skin.css</css>
+        <js>/SweetDevRIA/js/Log/SweetDevRia_MessageHelper.js</js> 
+        <js>/SweetDevRIA/js/Log/SweetDevRia_Log4Js.js</js> 
+        <js>/SweetDevRIA/js/Log/RIATimer.js</js> 
+        <js>/SweetDevRIA/js/Display/DisplayManager.js</js> 
+        <js>/SweetDevRIA/js/Dom/DomHelper.js</js> 
+        <js>/SweetDevRIA/js/Event/EventHelper.js</js> 
+        <js>/SweetDevRIA/js/Ajax/Ajax.js</js> 
+        <js>/SweetDevRIA/js/Ajax/AjaxPooler.js</js> 
+        <js>/SweetDevRIA/js/Ajax/ComHelper.js</js> 
+        <js>/SweetDevRIA/js/DragDrop/MultiSelect.js</js> 
+        <js>/SweetDevRIA/js/Components/SweetDevRia.js</js> 
+        <js>/SweetDevRIA/js/Components/hooking.js</js>
+        <js>/SweetDevRIA/js/Event/RiaEvent.js</js> 
+        <js>/SweetDevRIA/js/Event/EventManager.js</js> 
+        <js>/SweetDevRIA/js/Components/SweetDevRiaProxy.js</js> 
+        <js>/SweetDevRIA/js/Components/KeyListener.js</js> 
+        <js>/SweetDevRIA/js/Components/common.js</js>      
+        <js>/SweetDevRIA/js/Components/RiaComponent.js</js> 
+        <js>/SweetDevRIA/js/DragDrop/DragDropZone.js</js> 
+        <js>/SweetDevRIA/js/DragDrop/DropZone.js</js> 
+        <js>/SweetDevRIA/js/Components/ActiveManager.js</js> 
+        <js>/SweetDevRIA/js/Components/DateFormat.js</js> 
+        <js>/SweetDevRIA/js/Components/Array.js</js> 
+        <js>/SweetDevRIA/js/Components/collapse.js</js>
+        <js>/SweetDevRIA/js/Components/collapseManager.js</js>
+        <js>/SweetDevRIA/js/Components/layoutManager.js</js> 
+        <js>/SweetDevRIA/js/Components/clickToOpen.js</js> 
+        <js>/SweetDevRIA/js/Components/EditableText.js</js> 
+        <js>/SweetDevRIA/js/Components/messenger.js</js> 
+        <js>/SweetDevRIA/js/Components/list.js</js> 
+        <js>/SweetDevRIA/js/Components/control.js</js> 
+        <js>/SweetDevRIA/js/Components/form.js</js> 
+        <js>/SweetDevRIA/js/Components/mandatory.js</js> 
+        <js>/SweetDevRIA/js/Components/Treeview/Node.js</js> 
+        <js>/SweetDevRIA/js/Components/Treeview/HTMLNode.js</js> 
+        <js>/SweetDevRIA/js/Components/Treeview/TextNode.js</js> 
+        <js>/SweetDevRIA/js/Components/Treeview/RootNode.js</js> 
+        <js>/SweetDevRIA/js/Components/Treeview/RiaTreeview.js</js> 
+        <js>/SweetDevRIA/js/Components/datagrid/pageBar.js</js> 
+        <js>/SweetDevRIA/js/Components/datagrid/grid.js</js> 
+        <js>/SweetDevRIA/js/Components/exportExcel.js</js>
+        <js>/SweetDevRIA/js/Components/comboMulti.js</js> 
+        <js>/SweetDevRIA/js/Components/modalPanel.js</js> 
+        <js>/SweetDevRIA/js/Components/waitingMessage.js</js> 
+        <js>/SweetDevRIA/js/Components/alert.js</js> 
+        <js>/SweetDevRIA/js/Components/calendar/BaseCalendar.js</js> 
+        <js>/SweetDevRIA/js/Components/calendar/SimpleCalendar.js</js> 
+        <js>/SweetDevRIA/js/Components/calendar/StandAloneCalendar.js</js> 
+        <js>/SweetDevRIA/js/Components/calendar/DateRangeCalendar.js</js> 
+        <js>/SweetDevRIA/js/Components/calendar/MultiCalendarGroup.js</js> 
+        <js>/SweetDevRIA/js/Components/zone.js</js> 
+        <js>/SweetDevRIA/js/Components/accordion.js</js> 
+        <js>/SweetDevRIA/js/Components/FileUpload.js</js> 
+     	<js>/SweetDevRIA/js/Components/menu.js</js>
+     	<js>/SweetDevRIA/js/Components/suggest.js</js>
+        <js>/SweetDevRIA/js/Components/spliter.js</js> 
+        <js>/SweetDevRIA/js/Components/tabbox.js</js> 
+        <js>/SweetDevRIA/js/Components/window.js</js> 
+        <js>/SweetDevRIA/js/Components/windowDocking.js</js> 
+    </group>
+
+    <group name="sweetdevria-all-complete" minimize="false">
+        <group-ref>sweetdevria-ext</group-ref>
+        <group-ref>sweetdevria-core</group-ref>
+        <group-ref>demo-full-complete</group-ref>
+    </group>
+    
+    <group name="sweetdevria-all-min">
+        <group-ref>sweetdevria-ext</group-ref>
+        <group-ref>sweetdevria-core</group-ref>
+        <group-ref>demo-full-min</group-ref>
+    </group>
+</jso>

@@ -1,0 +1,1287 @@
+/** ------------------------------------
+ * SweetDEV RIA library
+ * Copyright [2006] [Ideo Technologies]
+ * ------------------------------------
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * 		http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ *
+ * For more information, please contact us at:
+ *         Ideo Technologies S.A
+ *        124 rue de Verdun
+ *        92800 Puteaux - France
+ *
+ *      France & Europe Phone : +33 1.46.25.09.60
+ *         USA & Canada Phone : (201) 984-7514
+ *
+ *        web : http://www.ideotechnologies.com
+ *        email : SweetDEV-RIA@ideotechnologies.com
+ *
+ *
+ * @version 2.2
+ * @author Ideo Technologies
+ */
+ 
+/************** Calendar ***************/
+.ideo-cal-main{
+	border-spacing:0;
+	border-collapse:separate;
+}
+
+.ideo-cal-main .calheader{
+	position:relative;
+	width:100%;	
+}
+
+.ideo-cal-main td.calcell{
+	width:1.5em;
+	height:1em;
+}
+
+.ideo-cal-main.calrowhead {
+	border-right-width:2px;
+}
+
+/*Specific changes for calendar running under fonts/reset */
+.ideo-cal-main a:hover {background:inherit;}
+
+
+/* Calendar header : navigation */
+.ideo-cal-main.calnavleft, .ideo-cal-main.calnavright {
+	position:absolute;
+	background-repeat:no-repeat;
+	top:0;
+	width:25px;
+	height:12px;
+}
+.ideo-cal-main .calnavleft {
+	left:4px;
+}
+.ideo-cal-main .calnavright {
+	right:4px;
+}
+/* end */
+
+/*Footer*/
+.ideo-cal-footer{
+	clear: both 		!important;
+}
+
+.ideo-cal-container{
+	float: left			!important;
+}
+
+.ideo-cal-container .ideo-cal-displayTableWrap{
+	float: left			!important;
+}
+
+/* Multi-month*/
+.ideo-cal-calWrapper { overflow: hidden; }
+.ideo-cal-calWrapper {*height:1%;} /* IE */
+.ideo-cal-calWrapper:after {content:'.';clear:both;display:block;visibility:hidden;height:0;} /* others */
+
+
+/************************ ClickToOpen **************************/
+
+.ideo-cto-main{
+    display: none;
+    position: absolute         !important;
+    overflow: auto			   !important;
+}
+
+.ideo-cto-closeIcon, .ideo-cto-closeIconHover, .ideo-cto-closeIconDown{
+	display:block;
+	width:14px;
+	height:14px;
+	right:4px;
+}
+
+/****************** NewWindow *************************/
+
+.ideo-win-main{
+	position :absolute;
+	padding : 0px;
+	margin : 0px;
+	/* reseting some values */
+	text-align: left;
+	font-weight: normal;
+	font-style: normal;	
+}
+
+.ideo-win-main .ideo-win-invWndPanel{
+	position :absolute;
+	top : 0px;
+	bottom : 0px;
+	left : 0px;
+	right : 0px;
+    width : 100%;
+    height : 100%;
+	padding : 0px;
+	margin : 0px;
+	z-index : 1;
+	background-color : green;
+	filter : alpha(opacity=0);
+	-moz-opacity: 0;
+	opacity: 0;
+	display : none;
+}
+
+.ideo-win-main .ideo-win-title{
+	white-space : nowrap;
+	/*cursor : default;*/
+	overflow : hidden;
+}
+
+.ideo-win-main .ideo-win-titleLabel{
+	white-space : nowrap;
+	overflow : hidden;
+	margin-left : 20px;
+}
+
+.ideo-win-main .ideo-win-panel{
+	position : absolute;
+	width : 100%;
+	overflow : auto;
+}
+
+.ideo-win-main .ideo-win-corner{
+	position: absolute;
+	right: 0px;
+	bottom : 0px;
+	cursor : NW-resize;
+	width : 16px;
+	height : 16px;
+	background-repeat : no-repeat;
+	overflow : hidden;
+}
+
+.ideo-win-main .ideo-win-cornerDisabled{
+	display : none;
+}
+
+.ideo-win-main .ideo-win-stateBar{
+	position : absolute;
+	bottom : 0px;
+	left : 0px;
+	width : 100%;
+	z-index : 0;
+}
+
+.ideo-win-main .ideo-win-minIcon,.ideo-win-main .ideo-win-maxIcon,.ideo-win-main .ideo-win-closeIcon,.ideo-win-main .ideo-win-menuIcon,.ideo-win-main .ideo-win-minRestoreIcon,.ideo-win-main .ideo-win-maxRestoreIcon{
+	position : absolute;
+	top : 1px;
+	width : 16px;
+	height : 14px;
+	background-repeat : no-repeat;
+	cursor: pointer;
+	overflow : hidden;
+}
+.ideo-win-main .ideo-win-minIcon{
+	right : 36px;
+}
+.ideo-win-main .ideo-win-maxIcon{
+	right : 20px;
+}
+.ideo-win-main .ideo-win-closeIcon{
+	right : 0px;
+}
+.ideo-win-main .ideo-win-minRestoreIcon{
+	right : 36px;
+}
+.ideo-win-main .ideo-win-maxRestoreIcon{
+	right : 20px;
+}
+
+/* Borders for d&d */
+
+.ideo-win-main .borderN,.ideo-win-main .borderS,.ideo-win-main .borderE,.ideo-win-main .borderW,.ideo-win-main .borderNEH,.ideo-win-main .borderNEV,.ideo-win-main .borderNWH,.ideo-win-main .borderNWV,.ideo-win-main .borderSEH,.ideo-win-main .borderSEV,.ideo-win-main .borderSWH,.ideo-win-main .borderSWV{
+	position : absolute;
+	z-index : 2;
+	overflow : hidden;
+	background-color : blue;
+	filter : alpha(opacity=0);
+	-moz-opacity: 0;
+	opacity: 0;
+}
+
+.ideo-win-main .borderN,.ideo-win-main .borderS{
+	height : 3px;
+	cursor : N-resize;
+	width : 100%;
+}
+
+.ideo-win-main .borderE,.ideo-win-main .borderW{
+	width : 3px;
+	cursor : E-resize;
+	height : 100%;
+}
+
+.ideo-win-main .borderN{
+	top : 0px;
+	left : 0px;
+}
+
+.ideo-win-main .borderS{
+	bottom : 0px;
+	left : 0px;
+}
+
+.ideo-win-main .borderE{
+	top : 0px;
+	bottom : 0px;
+	right : 0px;
+}
+
+.ideo-win-main .borderW{
+	top : 0px;
+	bottom : 0px;
+	left : 0px;
+}
+
+.ideo-win-main .borderDisabled{
+	display : none;
+}
+
+.ideo-win-main .borderNEH,.ideo-win-main .borderNEV,.ideo-win-main .borderNWH,.ideo-win-main .borderNWV,.ideo-win-main .borderSEH,.ideo-win-main .borderSEV,.ideo-win-main .borderSWH,.ideo-win-main .borderSWV{
+	z-index : 3;
+}
+
+.ideo-win-main .borderNEH,.ideo-win-main .borderNWH,.borderSEH,.ideo-win-main .borderSWH{
+	height : 3px;
+}
+
+.ideo-win-main .borderNEV,.ideo-win-main .borderNWV,.borderSEV,.ideo-win-main .borderSWV{
+	width : 3px;
+}
+.ideo-win-main .borderNEV,.ideo-win-main .borderNEH{
+	cursor : NE-resize;
+}
+
+.ideo-win-main .borderNWV,.ideo-win-main .borderNWH{
+	cursor : NW-resize;
+}
+
+.ideo-win-main .borderSEV,.ideo-win-main .borderSEH{
+	cursor : SE-resize;
+}
+
+.ideo-win-main .borderSWV,.ideo-win-main .borderSWH{
+	cursor : SW-resize;
+}
+
+.ideo-win-main .borderNEH{
+	right : 0px;
+	top : 0px;
+	width : 16px;
+}
+
+.ideo-win-main .borderNEV{
+	right : 0px;
+	top : 0px;
+	height : 16px;
+}
+
+.ideo-win-main .borderNWH{
+	left : 0px;
+	top : 0px;
+	width : 16px;
+}
+
+.ideo-win-main .borderNWV{
+	left : 0px;
+	top : 0px;
+	height : 16px;
+}
+
+.ideo-win-main .borderSEH{
+	right : 0px;
+	bottom : 0px;
+	width : 16px;
+}
+
+.ideo-win-main .borderSEV{
+	right : 0px;
+	bottom : 0px;
+	height : 16px;
+}
+
+.ideo-win-main .borderSWH{
+	left : 0px;
+	bottom : 0px;
+	width : 16px;
+}
+
+.ideo-win-main .borderSWV{
+	left : 0px;
+	bottom : 0px;
+	height : 16px;
+}
+
+/* end borders */
+
+.ideo-win-main .ideo-win-invPanel{
+	position : absolute;
+	width : 100%;
+	height : 0px;
+	background-color : blue;
+	z-index : 1;
+	filter : alpha(opacity=0);
+	-moz-opacity: 0;
+	opacity: 0;
+}
+.ideo-win-main .ideo-win-menuIcon{
+	left : 0px;
+}
+
+.ideo-win-main .ideo-win-invWnd{
+	position :absolute;
+	top : 0px;
+	bottom : 0px;
+	left : 0px;
+	right : 0px;
+    width : 100%;
+    height : 100%;
+	padding : 0px;
+	margin : 0px;
+	z-index : -1;
+	border : 1px solid black;
+}
+
+
+.ideo-win-main .ideo-win-dockingSpacer{
+	position : absolute;
+	width : 100%;
+	background-color : blue;
+	top : -10px;
+	height : 10px;
+	overflow : hidden;
+	display : none;
+	filter : alpha(opacity=0);
+	-moz-opacity: 0;
+	opacity: 0;
+}
+
+/*********************** Treeview ************************/
+
+DIV.ideo-tv-main {
+	/* reseting values */
+	text-align: left;
+	font-weight: normal;
+	font-style: normal;	
+}
+
+DIV.ideo-tv-main DIV.ideo-tv-header a img {
+	border: 0px;
+}
+
+/*
+ * TreeView
+ */
+/* first or middle sibling, no children */
+.ygtvtn { background: url(../images/treeview/default/tn.gif) 0 0 no-repeat; width:17px; height:22px; }
+
+/* first or middle sibling, no children, hover */
+.ygtvtnh { background: url(../images/treeview/default/tn.gif) 0 0 no-repeat; width:17px; height:22px; }
+
+/* first or middle sibling, collapsable */
+.ygtvtm { background: url(../images/treeview/default/tm.gif) 0 0 no-repeat; width:17px; height:22px; cursor:pointer }
+
+/* first or middle sibling, collapsable, hover */
+.ygtvtmh { background: url(../images/treeview/default/tmh.gif) 0 0 no-repeat; width:17px; height:22px; cursor:pointer }
+
+/* first or middle sibling, expandable */
+.ygtvtp { background: url(../images/treeview/default/tp.gif) 0 0 no-repeat; width:17px; height:22px; cursor:pointer }
+
+/* first or middle sibling, expandable, hover */
+.ygtvtph { background: url(../images/treeview/default/tph.gif) 0 0 no-repeat; width:17px; height:22px; cursor:pointer }
+
+/* last sibling, no children */
+.ygtvln { background: url(../images/treeview/default/ln.gif) 0 0 no-repeat; width:17px; height:22px; }
+
+/* last sibling, no children, hover*/
+.ygtvlnh { background: url(../images/treeview/default/ln.gif) 0 0 no-repeat; width:17px; height:22px; }
+
+/* Last sibling, collapsable */
+.ygtvlm { background: url(../images/treeview/default/lm.gif) 0 0 no-repeat; width:17px; height:22px; cursor:pointer }
+
+/* Last sibling, collapsable, hover */
+.ygtvlmh { background: url(../images/treeview/default/lmh.gif) 0 0 no-repeat; width:17px; height:22px; cursor:pointer }
+
+/* Last sibling, expandable */
+.ygtvlp { background: url(../images/treeview/default/lp.gif) 0 0 no-repeat; width:17px; height:22px; cursor:pointer }
+
+/* Last sibling, expandable, hover */
+.ygtvlph { background: url(../images/treeview/default/lph.gif) 0 0 no-repeat; width:17px; height:22px; cursor:pointer }
+
+/* Loading icon */
+.ygtvloading { background: url(../images/treeview/default/loading.gif) 0 0 no-repeat; width:16px; height:22px; }
+
+/* the style for the empty cells that are used for rendering the depth 
+ * of the node */
+.ygtvdepthcell { background: url(../images/treeview/default/vline.gif) 0 0 no-repeat; width:17px; height:22px; }
+
+.ygtvblankdepthcell { width:17px; height:22px; }
+
+/* the style of the div around each node */
+.ygtvitem { }  
+
+/* the style of the div around each node's collection of children */
+.ygtvchildren { }  
+* html .ygtvchildren { height:1%; }  
+
+/* the style of the text label in ygTextNode */
+.ygtvlabel, .ygtvlabel:link, .ygtvlabel:visited { 
+	margin-left:2px;
+	text-decoration: none;
+	cursor:move;
+}
+
+.ygtvlabel:hover{ 
+	margin-left:2px;
+	text-decoration: underline;
+	cursor:move;
+}
+
+.folder { 
+	color: black;
+}
+
+.folder_close { 
+	color: black;
+}
+
+.folder_icon { 
+	background: url(../images/treeview/default/lp2.gif) 0 0 no-repeat; 
+	padding-left:17px; 
+}
+
+.folder_icon_open { 
+	background: url(../images/treeview/folders/lm2.gif) 0 0 no-repeat; 
+	padding-left:17px; 
+}
+
+.folder_icon_close { 
+	background: url(../images/treeview/folders/lp2.gif) 0 0 no-repeat; 
+	padding-left:17px; 
+}
+
+
+.file { 
+	color: black;
+}
+
+.file_close { 
+	color: black;
+}
+
+.file_icon { 
+	background: url(../images/treeview/default/lp2.gif) 0 0 no-repeat; 
+	padding-left:17px; 
+}
+
+.file_icon_open { 
+	background: url(../images/treeview/folders/lm2.gif) 0 0 no-repeat; 
+	padding-left:17px; 
+}
+
+.file_icon_close { 
+	background: url(../images/treeview/folders/lp2.gif) 0 0 no-repeat; 
+	padding-left:17px; 
+}
+
+/*********************** Export *********************/
+.ideo-exp-validateButton {
+	margin-right:10px;
+}
+
+.ideo-exp-cancelButton {
+	margin-left:10px;
+} 
+
+/********************** Menu ************************************/
+
+ul.ideo-mnu-main, ul.ideo-mnu-main ul{
+    padding : 0px 0px 0px 0px;
+    margin : 0px 0px 0px 0px;
+    list-style-type : none;
+    position : absolute;
+}
+
+ul.ideo-mnu-main li{
+    list-style-type : none;
+    list-style-position : outside;
+    white-space : nowrap;
+    padding-left : 20px;
+    padding-right : 20px;
+}
+
+ul.ideo-mnu-main ul{
+    display : none;
+    left : 100%;
+}
+
+ul.ideo-mnu-main li:hover > ul{
+    display : inline;
+}
+
+ul.ideo-mnu-main ul.iehover{
+    display : inline;
+}
+
+ul.ideo-mnu-main div{
+    position : absolute;
+    right : 0px;
+    overflow : hidden;
+    display : inline;
+}
+
+ul.ideo-mnu-main li.ideo-mnu-check{
+    background-repeat : no-repeat;
+}
+
+/************* Menu Bar *************/
+
+
+ul.ideo-mnb-main {
+	background-color:#D3D3D3;
+	border-color:white black black white;
+	border-style:solid;
+	border-width:1px;
+	cursor:default;
+	list-style-type:none;
+	margin:0px;
+	padding:0px;
+}
+
+ul.ideo-mnb-main li.ideo-mnb-main{
+	display:inline;
+	padding-left:10px;
+	padding-right:10px;
+	position:relative;
+}
+
+ul.ideo-mnb-main > li:hover{
+    background-color : #00008B;
+    color : white;
+}
+
+ul.ideo-mnb-main li.iehovermenubar {
+    background-color : #00008B;
+    color : white;
+}
+
+ul.ideo-mnb-main  ul.ideo-mnb-firstLevel {
+    left : 0px;
+    top : 100%;
+    display : none;
+}
+
+ul.ideo-mnb-main  li  ul{
+    left : 100%;
+    display : none;
+}
+
+
+ul.ideo-mnb-main > li:hover > ul {
+    display : block;
+}
+
+ul.ideo-mnb-main li.iehovermenubar ul.ideo-mnb-root {
+    display : block;
+}
+
+
+/****************************** SPliter *******************************/
+
+.ideo-vsp-main{
+    float : left;
+    height : 100%;
+    cursor : E-resize;
+    overflow : hidden;
+}
+
+.ideo-hsp-main{
+    width : 100%;
+    cursor : N-resize;
+    overflow : hidden;
+}
+
+
+.ideo-vsp-zone{
+
+}
+
+.ideo-hsp-zone{
+    overflow : auto;
+}
+
+/******************** EditableText **********************/
+
+.ideo-edi-main {
+    display: inline;
+}
+
+/******************** Tabbox *****************************/
+/* All styling orignal informations have been kept for Yahoo core tabbox */
+
+.yui-navset .yui-content {
+    border:1px solid #ccc;
+}
+.yui-navset .yui-nav .selected a, .yui-navset .yui-nav a:hover {
+    background-color:#fff;
+}
+
+.yui-navset .yui-nav li a {
+    background:#e5e5e5 url(../images/tabbox/round_4px_trans_gray.gif) no-repeat;
+}
+.yui-navset .yui-nav li a em {
+    background:transparent url(../images/tabbox/round_4px_trans_gray.gif) no-repeat top right;
+    padding:0.5em;
+}
+
+/* top oriented */
+
+.yui-navset-top .yui-nav { margin-bottom:-1px; } /* for overlap, based on content border-width */
+.yui-navset-top .yui-nav li a {
+    border-bottom:1px solid #ccc;
+}
+
+.yui-navset-top .yui-nav .selected a { border-bottom:0; }
+.yui-navset-top .yui-nav .selected a em { padding-bottom:0.6em; } /* adjust height */
+
+/* top & bottom oriented */
+.yui-navset-top .yui-nav li a em, .yui-navset-bottom .yui-nav li a em {
+    margin-left:4px; /* based on border-radius */
+    padding-right:8px; /* based on border-radius (2x left to balance margin) */
+    padding-left:4px;
+}
+
+/* bottom oriented */
+
+.yui-navset-bottom .yui-nav { margin-top:-1px; } /* for overlap, based on content border-width */
+.yui-navset-bottom .yui-nav li a { border-top:1px solid #ccc; }
+
+.yui-navset-bottom .yui-nav .selected a { border-top:0; }
+.yui-navset-bottom .yui-nav .selected a em { padding-top:0.6em; } /* adjust height */
+
+.yui-navset-bottom .yui-nav li a { background-position:bottom left; }
+.yui-navset-bottom .yui-nav li a em { background-position:bottom right; }
+
+/* left oriented */
+
+.yui-navset-left .yui-content { margin-left:-1px; } /* for overlap, based on content border-width */
+
+.yui-navset-left .yui-nav li a {
+    border-right:1px solid #ccc;
+    padding-bottom:4px;
+}
+
+.yui-navset-left .yui-nav li a em, .yui-navset-right .yui-nav li a em {
+    padding-top:8px; /* based on border-radius (2x left to balance margin) */
+}
+
+.yui-navset-left .yui-nav .selected a { border-right:0; }
+.yui-navset-left .yui-nav .selected a em { padding-left:0.6em; } /* adjust width */
+
+.yui-navset-left .yui-nav li a { background-position:bottom left; }
+.yui-navset-left .yui-nav li a em { background-position:top left; }
+
+/* right oriented */
+
+.yui-navset-right .yui-content { margin-right:-1px; } /* for overlap, based on content border-width */
+
+.yui-navset-right .yui-nav li a {
+    border-left:1px solid #ccc;
+    padding-bottom:4px;
+}
+
+.yui-navset-right .yui-nav .selected a { border-left:0; }
+.yui-navset-right .yui-nav .selected a em { padding-left:0.6em; } /* adjust width */
+
+.yui-navset-right .yui-nav li a { background-position:bottom right; }
+.yui-navset-right .yui-nav li a em { background-position:top right; }
+
+/* default space between tabs */
+.yui-navset .yui-nav li {
+    margin-right:0.5em; /* horizontal tabs */
+}
+.yui-navset-left .yui-nav li, .yui-navset-right .yui-nav li {
+    margin:0 0 0.5em; /* vertical tabs */
+}
+
+/* default width for side tabs */
+.yui-navset-left .yui-nav, .yui-navset-right .yui-nav { width:6em; }
+.yui-navset-left { padding-left:6em; } /* map to nav width */
+.yui-navset-right { padding-right:6em; } /* ditto */
+
+/* core */
+
+.yui-nav, .yui-nav li {
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+.yui-navset li em { font-style:normal; }
+
+.yui-navset {
+    position:relative; /* contain absolute positioned tabs (left/right) */
+    zoom:1;
+}
+
+.yui-navset .yui-content { zoom:1; }
+
+.yui-navset .yui-nav li {
+    display:inline-block;
+    display:-moz-inline-stack;
+    *display:inline; /* IE */
+    vertical-align:bottom; /* safari: for overlap */
+    cursor:pointer; /* gecko: due to -moz-inline-stack on anchor */
+    zoom:1; /* IE: kill space between horizontal tabs */
+}
+
+.yui-navset-left .yui-nav li, .yui-navset-right .yui-nav li {
+    display:block;
+}
+
+.yui-navset .yui-nav a {
+    outline:0; /* gecko: keep from shifting */
+}
+
+.yui-navset .yui-nav a { position:relative; } /* IE: to allow overlap */
+
+.yui-navset .yui-nav li a {
+    display:block;
+    display:inline-block;
+    vertical-align:bottom; /* safari: for overlap */
+    zoom:1;
+}
+
+.yui-navset-left .yui-nav li a, .yui-navset-right .yui-nav li a {
+    display:block;
+}
+
+.yui-navset-bottom .yui-nav li a {
+    vertical-align:text-top; /* for inline overlap (reverse for Op border bug) */
+}
+
+.yui-navset .yui-nav li a em { display:block; }
+
+/* position left and right oriented tabs */
+.yui-navset-left .yui-nav, .yui-navset-right .yui-nav { position:absolute; z-index:1; }
+.yui-navset-left .yui-nav { left:0; }
+.yui-navset-right .yui-nav { right:0; }
+
+.ideo-tab-closeImg {
+	background-repeat : no-repeat;
+}
+
+
+/********************* Combo Multi **********************/
+
+DIV.ideo-cbo-container{
+    left: 5px;
+}
+
+DIV.ideo-cbo-container H1 {
+    font: 14pt Verdana, Arial, Helvetica, sans-serif;
+}
+
+DIV.ideo-cbo-sugg  DIV.selectionList {
+/*    border-bottom: 5px solid black; */
+}
+
+DIV.ideo-cbo-listSeparator {
+	height:3px;
+}
+
+DIV.ideo-cbo-sugg DIV.normal {
+}
+
+/***************/
+DIV.ideo-cbo-main {
+    display: inline;
+    margin: 0px;
+    /* reseting values */
+	text-align: left;
+	font-weight: normal;
+	font-style: normal;		
+}
+DIV.ideo-cbo-container {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    /* reseting values */
+	text-align: left;
+}
+DIV.ideo-cbo-sugg {
+    overflow: auto;
+}
+
+DIV.ideo-cbo-title{
+	display : block;
+}
+
+
+/************************  pagebar  *************************/
+
+.ideo-pgb-pagebar {
+	width : 100%;
+	bottom : 0px;
+	text-align: center;
+}
+
+.ideo-pgb-pagebar .ideo-pgb-actualPageNumber{
+
+}
+
+.ideo-pgb-pagebar .ideo-pgb-pageNumber{
+
+}
+
+/************************  grid  *************************/
+
+.ideo-ndg-table{
+	position : relative;
+	/* reseting values */
+	text-align: left;
+	font-weight: normal;
+	font-style: normal;	
+}
+
+.ideo-ndg-table .ideo-ndg-divHeader{
+	width : 100%;
+	overflow : hidden;
+}
+
+.ideo-ndg-table .ideo-ndg-head{
+	width : 100%;
+	table-layout:fixed;
+}
+
+.ideo-ndg-table .ideo-ndg-header{
+
+}
+
+.ideo-ndg-table .ideo-ndg-header input{
+	border: 0px;
+}
+
+.ideo-ndg-table .ideo-ndg-headerSort{
+    display: inline;
+	width : 17px;
+	height : 16px;
+}
+
+.ideo-ndg-table .ideo-ndg-headerSortDesc{
+
+}
+
+.ideo-ndg-table .ideo-ndg-headerSortAsc{
+
+}
+
+
+.ideo-ndg-table .ideo-ndg-arrow{
+	width : 9px;
+	height : 11px;
+	visibility : hidden;
+	overflow : hidden;
+}
+
+
+.ideo-ndg-table tr{
+    background-color : white;
+	
+}
+
+.ideo-ndg-table td{
+    overflow : hidden;
+}
+
+.ideo-ndg-table .ideo-ndg-detail{
+
+}
+
+.ideo-ndg-table .ideo-ndg-oddRow{
+
+}
+
+.ideo-ndg-table .ideo-ndg-oddRow input{
+	border: 0px;
+}
+
+.ideo-ndg-table .ideo-ndg-parRow{
+
+}
+
+.ideo-ndg-table .ideo-ndg-parRow input{
+	border: 0px;
+}
+
+.ideo-ndg-table .ideo-ndg-selection{
+
+
+}
+
+.ideo-ndg-table .ideo-ndg-headSeparator{
+	width : 2px;
+}
+
+.ideo-ndg-table .ideo-ndg-headSeparatorNoResize{
+	width : 2px;
+}
+
+.ideo-ndg-table .ideo-ndg-divBody{
+	width : 100%;
+	overflow : auto;
+}
+
+.ideo-ndg-table .ideo-ndg-body{
+	width : 100%;
+	table-layout:fixed;
+}
+
+.ideo-ndg-table .ideo-ndg-bodySeparator{
+	width : 2px;
+}
+
+.ideo-ndg-table .ideo-ndg-resizer{
+	width : 18px;
+	height : 18px;
+	position : absolute;
+	bottom : 0px;
+	right : 0px;
+}
+
+/* Windows */
+.ideo-ndg-winFieldSet{
+	width: auto;
+	/* reseting values */
+	text-align: left;
+	font-weight: normal;
+	font-style: normal;
+}
+
+DIV.ideo-ndg-waitingMessage {
+    position: absolute;
+    display: none;
+}
+
+/************************  alert  *************************/
+
+/* Waiting message class */
+.ideo-alt-zone {
+    position: absolute;
+    display: none;
+}
+
+.ideo-alt-message {
+}
+
+.ideo-alt-icon {
+	float:left;
+}
+
+.ideo-alt-buttonBar {
+	text-align:center;
+}
+
+.ideo-alt-button {
+
+}
+
+/************************  tree  *************************/
+
+.ideo-tre-collapseNode .ideo-tre-folder {
+	background-image : url(../images/tree/folder.gif);
+}
+
+.ideo-tre-expandNode .ideo-tre-folder {
+	background-image : url(../images/tree/folder-open.gif);
+}
+
+.ideo-tre-file {
+	background-image : url(../images/tree/file.gif);
+}
+
+.ideo-tre-iconLine {
+	background-image : url(../images/tree/line.gif);
+}
+
+
+.ideo-tre-plus {
+	background-image : url(../images/tree/plus.gif);
+}
+.ideo-tre-plusLast {
+	background-image : url(../images/tree/plusLast.gif);
+}
+.ideo-tre-minus {
+	background-image : url(../images/tree/minus.gif);
+}
+.ideo-tre-minusLast {
+	background-image : url(../images/tree/minusLast.gif);
+}
+.ideo-tre-normal {
+	background-image : url(../images/tree/normal.gif);
+}
+.ideo-tre-normalLast {
+	background-image : url(../images/tree/normalLast.gif);
+}
+
+.ideo-tre-li {
+	white-space:nowrap;
+	
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+}
+
+.ideo-tre-node {
+
+
+}
+
+.ideo-tre-images {
+	background-repeat:no-repeat;
+	border:0pt none;
+	height:18px;
+	margin:0pt;
+	padding:0pt;
+	vertical-align:top;
+	width:16px;
+}
+
+.ideo-tre-selected .ideo-tre-label {
+	background-color : blue;
+}
+
+.ideo-tre-label {
+
+
+}
+
+.ideo-tre-children {
+	margin:0pt;
+	padding:0pt;
+}
+
+.ideo-tre-box {
+
+}
+
+/************************  collapse  *************************/
+
+
+/**
+ * This class is apply to collapse header
+ */
+.ideo-clp-header {
+
+}
+
+/**
+ * This class is apply to collapse header when  it s expanded
+ */
+.ideo-clp-header-exp {
+
+}
+
+/**
+ * This class is apply to collapse header when  it s collapsed
+ */
+.ideo-clp-header-col {
+
+}
+
+/**
+ * This class is apply to collapse body
+ */
+.ideo-clp-body {
+
+}
+/**
+ * This class is apply to collapse body when  it s expanded
+ */
+.ideo-clp-body-exp {
+
+}
+
+/**
+ * This class is apply to collapse body when  it s collapsed
+ */
+ .ideo-clp-body-exp {
+
+	
+}
+
+
+/************************  list  *************************/
+/**
+ * This class is apply to ul tag containing all items li
+ */
+.ideo-lst-ul {
+	list-style-type : none; 
+	padding-left:0px;
+	margin-top:0px;
+	margin-left:0px;
+}
+
+/**
+ * This class is apply to each li tag containing an item
+ */
+.ideo-lst-li {
+	list-style-position : outside;
+}
+
+/**
+ * This class is apply to list containing all items
+ */
+.ideo-lst-list {
+	overflow:auto; 
+	scroll:auto; 
+}
+
+/**
+ * This class is apply to each item
+ */
+.ideo-lst-item {
+	display : block;
+}
+
+/**
+ * This class is apply to the hover item
+ */
+.ideo-lst-item:hover {
+}
+
+
+
+
+
+/************************  messenger  *************************/
+
+/**
+ * This class is apply to a component on error
+ */
+.ideo-msg-error {
+	
+}
+
+/**
+ * This class is apply to a component label when it's on error
+ */
+.ideo-msg-labelError {
+	color : red;
+}
+
+/**
+ * This class is apply to messenger icon for an error message
+ */
+.ideo-msg-iconError {
+	background-image : url("../images/control/error.png"); 
+	background-repeat:no-repeat;
+	margin-left : 16px;
+	padding-left : 16px;
+}
+
+/**
+ * This class is apply to messenger icon for an non error message
+ */
+.ideo-msg-iconNotError {
+	background-image : url("../images/control/not_error.png"); 
+	background-repeat:no-repeat;
+	margin-left : 16px;
+	padding-left : 16px;
+}
+
+/**
+ * This class is apply to messenger message for an error message
+ */
+.ideo-msg-messageError {
+	color : red;
+}
+
+/**
+ * This class is apply to messenger message for an non error message
+ */
+.ideo-msg-messageNotError {
+	color : black;
+}
+
+
+/* Displaying acronym on IE */
+acronym {
+	border-bottom: 1px dotted black;
+}
+
+
+/************************  suggest  *************************/
+
+
+/**
+ * This class is apply to the suggest input element
+ */
+.ideo-sug-input {
+}
+
+/**
+ * This class is apply to the item list ul
+ */
+.ideo-sug-items {
+	list-style-type: none;
+	left : 0px;
+	margin: 0;
+	padding: 0;
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+/**
+ * This class is apply to each li item 
+ */
+.ideo-sug-items li {
+	list-style-type : none;
+}
+
+/**
+ * This class is apply to each 'a' item
+ */
+.ideo-sug-item {
+	text-decoration: none;
+	display : block;
+}
+
+
+.ideo-sug-popup {
+	position:absolute; 
+	display:none;
+	margin: 0;
+	padding: 0;
+	overflow: auto;
+}
+
+.ideo-sug-header {
+	display : block;
+	margin: 0;
+	padding: 0;
+}
+
+.ideo-sug-footer {
+	display : block;
+	margin: 0;
+	padding: 0;
+}
+
+.ideo-sug-buttonOut, .ideo-sug-buttonOver, .ideo-sug-buttonDown, .ideo-sug-buttonLoading{
+	width:16px;height:16px;cursor:pointer;display:inline;
+}

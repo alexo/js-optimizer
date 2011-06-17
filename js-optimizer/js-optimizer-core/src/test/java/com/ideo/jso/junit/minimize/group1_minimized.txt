@@ -1,0 +1,3 @@
+
+function group1js1(){alert("group1js1");}
+function group1js2(){alert("group1js2");}

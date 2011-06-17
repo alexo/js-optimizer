@@ -1,0 +1,54 @@
+[Box:  - ::com.ideo.jso.conf]
+X=2275
+Y=40
+
+[Box:  - ::com.ideo.jso.filter]
+X=1660
+Y=40
+
+[Box:  - ::com.ideo.jso.main]
+X=1455
+Y=40
+
+[Box:  - ::com.ideo.jso.minifier]
+X=1045
+Y=40
+
+[Box:  - ::com.ideo.jso.minifier.css]
+X=1250
+Y=40
+
+[Box:  - ::com.ideo.jso.minifier.js]
+X=840
+Y=40
+
+[Box:  - ::com.ideo.jso.processor]
+X=1865
+Y=40
+
+[Box:  - ::com.ideo.jso.retention]
+X=635
+Y=40
+
+[Box:  - ::com.ideo.jso.servlet]
+X=430
+Y=40
+
+[Box:  - ::com.ideo.jso.tag]
+X=20
+Y=40
+
+[Box:  - ::com.ideo.jso.tag.includers]
+X=225
+Y=40
+
+[Box:  - ::com.ideo.jso.util]
+X=2070
+Y=40
+
+[Diagram: ]
+OffsetX=0
+OffsetY=0
+Visibility=0
+ShowAssoc=0
+

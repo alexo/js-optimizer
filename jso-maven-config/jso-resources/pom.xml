@@ -1,0 +1,67 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>js-optimizer</groupId>
+  <artifactId>jso-resources</artifactId>
+  <version>1.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>${project.artifactId}</name>
+  <description>This jar contains all general configuration for SweetDEV RIA projects (checkstyle, pmd).</description>
+
+  <properties>
+			 				
+	<scm.trunk.url>https://svn.ideotechnologies.com/depot/public/svn/js-optimizer/trunk/jso-maven-config/jso-resources</scm.trunk.url>
+    <site.deploy>${site.url}/js-optimizer/${project.artifactId}</site.deploy>
+					
+	</properties>
+  
+  
+ 	 <!--*************** SUBVERSION  ***************************-->
+	<scm>
+		<url>${scm.trunk.url}</url>
+		<connection>scm:svn:${scm.trunk.url}</connection>
+		<developerConnection>scm:svn:${scm.trunk.url}</developerConnection>
+		<tag>${scm.trunk.url}</tag>
+	</scm>
+	
+	
+	<!--*************** DEPLOIEMENT ***************************-->
+	<distributionManagement>
+	
+		<repository>
+		  <id>${repo.public.id}</id>
+		  <name>${repo.public.name}</name>
+		  <url>${repo.public.url}</url>
+		</repository>
+		
+		<snapshotRepository>
+		  <id>${repo.snapshot.id}</id>
+		  <name>${repo.snapshot.name}</name>
+		  <url>${repo.snapshot.url}</url>
+		</snapshotRepository>
+		
+		<site>
+		  <id>${site.id}</id>
+		  <name>Site Deployment Server</name>
+		  <url>${site.deploy}</url>
+		</site>
+	
+  </distributionManagement>		   
+	 
+	
+	<build>
+	 <extensions>			
+		
+	    <extension>
+	        <groupId>org.apache.maven.wagon</groupId>
+	        <artifactId>wagon-ftp</artifactId>
+	        <version>1.0-beta-2</version>
+	    </extension>
+		  
+	 </extensions>
+	 
+	 </build>
+	
+  
+</project>
